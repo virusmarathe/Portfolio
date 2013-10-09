@@ -1,4 +1,6 @@
 This repo contains all the projects that I worked on while at UCSC.
+All projects have a solution file for visual C++ for ease of access.
+
 It includes:
 - Psychic Ninja (Senior Game Design Final Project)
 - 3D OpenGL Game Engine (C++)

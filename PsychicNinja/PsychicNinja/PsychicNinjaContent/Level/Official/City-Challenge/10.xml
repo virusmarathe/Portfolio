@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        2624,1136
+      </bounds>
+      <music>
+        Music/Electro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/goonMoveLeft1
+        Enemies/knife artist 1
+        Enemies/rat1
+        Enemies/bat1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        platform39
+        platform40
+        platform41
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+        hplatform12
+        hplatform13
+        hplatform14
+        hplatform15
+        hplatform16
+        hplatform17
+        hplatform18
+        hplatform19
+        hplatform20
+        hplatform21
+        hplatform22
+        hplatform23
+        hplatform24
+        hplatform25
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+        doodad7
+        doodad8
+        doodad9
+        doodad10
+        doodad11
+        doodad12
+        doodad13
+        doodad14
+        doodad15
+        doodad16
+        doodad17
+        doodad18
+        doodad19
+        doodad20
+        doodad21
+        doodad22
+        doodad23
+        doodad24
+        doodad25
+        doodad26
+        doodad27
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        1284,296
+      </startlocation>
+      <goalregion>
+        2360,672,50,50
+      </goalregion>
+      <commands>
+        ML_Lim -1
+        MR_Lim -1
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim -1
+        WC_Lim 0
+        UI_Lim 1
+      </commands>
+      <platforms>
+        rec 856,168,32,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        through
+        tile
+        rec 1016,208,32,192
+        nogravity
+        ptl 0,4,120,0,-4,120
+        nohazardous
+        platform23
+        notrigger
+        through
+        tile
+        rec 1048,368,128,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 1704,40,800,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform9
+        notrigger
+        through
+        tile
+        rec 2072,488,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 2256,624,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 2200,440,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 2016,632,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 2136,552,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        nothrough
+        tile
+        rec 1192,952,256,96
+        nogravity
+        ptl 50,0,0
+        hazardous
+        hplatform3
+        trigger 1528,1000,408,8
+        through
+        notile
+        rec -400,944,256,96
+        nogravity
+        ptl 50,0,0
+        hazardous
+        hplatform3
+        trigger 288,976,728,32
+        through
+        notile
+        rec 8,1008,2624,128
+        nogravity
+        nopatrol
+        nohazardous
+        platform31
+        notrigger
+        nothrough
+        tile
+        rec 2312,720,32,192
+        nogravity
+        nopatrol
+        nohazardous
+        platform26
+        notrigger
+        nothrough
+        tile
+        rec 1960,720,32,192
+        nogravity
+        nopatrol
+        nohazardous
+        platform26
+        notrigger
+        nothrough
+        tile
+        rec 1960,912,384,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform26
+        notrigger
+        through
+        tile
+        rec 1992,752,320,160
+        nogravity
+        nopatrol
+        hazardous
+        hplatform8
+        notrigger
+        nothrough
+        tile
+        rec 1704,72,64,704
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 0,208,288,800
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        through
+        tile
+        rec 720,888,160,32
+        nogravity
+        ptl 0,-4,90,0,4,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 1048,976,128,32
+        nogravity
+        ptl 0,-5,0
+        nohazardous
+        platform21
+        trigger 1056,960,120,16
+        nothrough
+        tile
+        rec 312,696,160,32
+        nogravity
+        ptl 3,0,120,-3,0,120
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 720,504,160,32
+        nogravity
+        ptl 0,4,90,0,-4,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 552,600,160,32
+        nogravity
+        ptl -3,-2,90,3,2,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 552,800,160,32
+        nogravity
+        ptl -3,2,90,3,-2,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 2344,720,288,288
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        nothrough
+        tile
+        rec 1176,368,352,640
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        nothrough
+        tile
+      </platforms>
+      <doodads>
+        rec 1128,936,48,40
+        tex 11
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+        rec 344,664,32,32
+        shuriken
+      </items>
+      <ropes>
+        2264,72,16,576
+        2208,72,16,384
+        2144,72,16,504
+        2024,72,16,576
+        2080,72,16,424
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

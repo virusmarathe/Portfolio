@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        2168,976
+      </bounds>
+      <music>
+        Music/Synchro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/goonMoveLeft1
+        Enemies/knife artist 1
+        Enemies/rat1
+        Enemies/bat1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        platform39
+        platform40
+        platform41
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+        hplatform12
+        hplatform13
+        hplatform14
+        hplatform15
+        hplatform16
+        hplatform17
+        hplatform18
+        hplatform19
+        hplatform20
+        hplatform21
+        hplatform22
+        hplatform23
+        hplatform24
+        hplatform25
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+        doodad7
+        doodad8
+        doodad9
+        doodad10
+        doodad11
+        doodad12
+        doodad13
+        doodad14
+        doodad15
+        doodad16
+        doodad17
+        doodad18
+        doodad19
+        doodad20
+        doodad21
+        doodad22
+        doodad23
+        doodad24
+        doodad25
+        doodad26
+        doodad27
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        260,92
+      </startlocation>
+      <goalregion>
+        1248,800,50,50
+      </goalregion>
+      <commands>
+        ML_Lim 0
+        MR_Lim 0
+        Ju_Lim 3
+        WJ_Lim 1
+        WS_Lim 1
+        WC_Lim 0
+        UI_Lim 0
+      </commands>
+      <platforms>
+        rec 1280,272,192,320
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 1952,816,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 1952,624,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 1952,432,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 1952,240,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 1952,48,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 176,872,160,160
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 176,648,160,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 176,424,160,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 1440,392,32,320
+        nogravity
+        ptl 0,1,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 1952,-176,128,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform6
+        notrigger
+        through
+        tile
+        rec 1248,848,224,160
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 1088,592,160,416
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 1952,-144,128,192
+        nogravity
+        ptl -1,0,0
+        nohazardous
+        platform11
+        notrigger
+        through
+        tile
+        rec 176,168,160,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform41
+        notrigger
+        through
+        tile
+        rec 1088,240,384,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform41
+        notrigger
+        through
+        tile
+        rec 1088,272,192,320
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+        rec 776,80,224,32
+        nogravity
+        ptl 0,2,0
+        nohazardous
+        platform21
+        notrigger
+        through
+        tile
+        rec 432,584,224,32
+        nogravity
+        ptl 0,-2,0
+        nohazardous
+        platform21
+        notrigger
+        through
+        tile
+        rec 176,200,160,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform2
+        notrigger
+        through
+        tile
+      </platforms>
+      <doodads>
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+      </items>
+      <ropes>
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

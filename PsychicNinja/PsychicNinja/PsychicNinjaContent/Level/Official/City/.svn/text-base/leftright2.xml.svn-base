@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        1590,1640
+      </bounds>
+      <music>
+        Music/City of Psychic Dreams
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        515,1380
+      </startlocation>
+      <goalregion>
+        1390,1570,50,50
+      </goalregion>
+      <commands>
+        ML_Lim 1
+        MR_Lim 1
+        Ju_Lim 4
+        WJ_Lim 0
+        WS_Lim 0
+        WC_Lim 0
+        UI_Lim 0
+      </commands>
+      <platforms>
+        rec 460,1450,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 28
+        rec 900,1450,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 29
+        rec 500,1450,400,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 26
+        rec 1060,1340,160,400
+        nogravity
+        nopatrol
+        nohazardous
+        tex 3
+        rec 1180,1380,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 4
+        rec 1060,1340,120,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 4
+        rec 980,1500,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 9
+        rec 1020,1500,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 1060,1500,80,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 4
+        rec 1140,1420,40,80
+        nogravity
+        nopatrol
+        nohazardous
+        tex 4
+        rec 1220,1340,40,400
+        nogravity
+        nopatrol
+        nohazardous
+        tex 13
+        rec 1220,1380,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 1380,1660,80,80
+        nogravity
+        nopatrol
+        nohazardous
+        tex 1
+        rec 1380,1620,80,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 5
+        rec 880,1100,200,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 26
+        rec 1080,1100,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 29
+        rec 840,1100,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 28
+        rec 1260,1220,40,520
+        nogravity
+        nopatrol
+        nohazardous
+        tex 3
+        rec 1220,1220,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 1180,1220,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 1550,1500,40,40
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+      </platforms>
+      <doodads>
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+      </items>
+      <ropes>
+        900,320,10,1160
+        490,330,10,1160
+        1080,320,10,820
+        870,320,10,820
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

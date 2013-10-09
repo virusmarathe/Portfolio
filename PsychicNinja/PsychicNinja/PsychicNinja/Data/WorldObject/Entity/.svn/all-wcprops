@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/psychicninja/!svn/ver/344/trunk/VSProject/PsychicNinja/PsychicNinja/PsychicNinja/Data/WorldObject/Entity
+END
+Player.cs
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/psychicninja/!svn/ver/344/trunk/VSProject/PsychicNinja/PsychicNinja/PsychicNinja/Data/WorldObject/Entity/Player.cs
+END
+Enemy.cs
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/psychicninja/!svn/ver/344/trunk/VSProject/PsychicNinja/PsychicNinja/PsychicNinja/Data/WorldObject/Entity/Enemy.cs
+END
+Projectile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/psychicninja/!svn/ver/260/trunk/VSProject/PsychicNinja/PsychicNinja/PsychicNinja/Data/WorldObject/Entity/Projectile.cs
+END

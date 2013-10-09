@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        1750,830
+      </bounds>
+      <music>
+        Music/Synchro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        270,405
+      </startlocation>
+      <goalregion>
+        1140,430,50,50
+      </goalregion>
+      <commands>
+        ML_Lim 1
+        MR_Lim 1
+        Ju_Lim 6
+        WJ_Lim 0
+        WS_Lim 0
+        WC_Lim 0
+        UI_Lim 0
+      </commands>
+      <platforms>
+        rec 270,480,920,160
+        nogravity
+        nopatrol
+        nohazardous
+        platform22
+        notrigger
+      </platforms>
+      <doodads>
+        rec 0,570,50,40
+        tex 4
+        rec 760,0,50,40
+        tex 0
+        rec 270,850,50,40
+        tex 0
+        rec 1130,890,50,40
+        tex 0
+        rec 1510,560,50,40
+        tex 0
+      </doodads>
+      <enemies>
+        rec 560,400,50,80
+        ptl -3,0,210,3,0,210
+        tex 0
+        rec 1040,430,40,50
+        ptl -1,0,0
+        tex 1
+      </enemies>
+      <items>
+      </items>
+      <ropes>
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+
+    <levelinfo>
+      <levelname>
+        Development Level
+      </levelname>
+    </levelinfo>
+    
+    
+    <textures>
+      <background>
+        city bg
+      </background>
+      
+      <enemy>
+       Enemies/Muscle-Goon
+      </enemy>
+      
+      <platform>
+        Concrete-Block
+        Concrete-Side
+      </platform>
+      
+    </textures>
+
+    <objects>
+
+      <startlocation>
+        0,0
+      </startlocation>
+
+      <goalregion>
+        550,200,50,50
+      </goalregion>
+      
+		  <commands>
+        ML_Lim -1
+        MR_Lim -1
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim -1
+        WC_Lim -1
+        UI_Lim -1
+      </commands>
+    
+      <platforms>
+        rec 100,350,400,100
+        nogravity
+        nopatrol
+        tex 0
+        rec 500, 350, 50, 200
+        nogravity
+        nopatrol
+        tex 1
+        rec -200, 450, 1200, 100
+        nogravity
+        nopatrol
+        tex 0
+        rec 250, 200, 100, 50
+        nogravity
+        ptl -8,0,3,0,5,10,8,0,3,0,-5,10
+        tex 0
+      </platforms>
+    
+      <enemies>
+        rec 500,100,100,100
+        nopatrol
+        tex 0
+      </enemies>
+
+      <items>
+        rec 400,200,20,20
+        shuriken
+        rec 500, 200, 20, 20
+        sword
+        rec 600, 200, 20, 20
+        hookshot
+      </items>
+
+    </objects>
+    
+	</Asset>
+  
+</XnaContent>

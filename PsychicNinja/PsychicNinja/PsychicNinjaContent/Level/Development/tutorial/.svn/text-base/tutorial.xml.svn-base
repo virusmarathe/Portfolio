@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        925,738
+      </bounds>
+      <music>
+        Music/Synchro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        Concrete-Block
+        brickcenter
+        brickcorner
+        brickroof
+        brickside
+        roof2
+        girder2
+        girder3
+        girdermetal
+        2-way angled connector
+        2-way pipe
+        4-way pipe
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        large cloud gray
+        large cloud white
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        270,490
+      </startlocation>
+      <goalregion>
+        740,30,50,50
+      </goalregion>
+      <commands>
+        ML_Lim -1
+        MR_Lim -1
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim -1
+        WC_Lim -1
+        UI_Lim -1
+      </commands>
+      <platforms>
+        rec -6,481,27,256
+        nogravity
+        nopatrol
+        tex 0
+        rec -95,708,988,30
+        nogravity
+        nopatrol
+        tex 0
+        rec 640,480,20,180
+        nogravity
+        nopatrol
+        tex 0
+        rec 810,440,20,280
+        nogravity
+        nopatrol
+        tex 0
+      </platforms>
+      <doodads>
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+      </items>
+    </objects>
+	</Asset>
+</XnaContent>

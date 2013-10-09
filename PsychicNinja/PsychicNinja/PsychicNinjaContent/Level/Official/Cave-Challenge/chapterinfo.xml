@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <chapternumber>
+      4
+    </chapternumber>
+    <levels>
+      7
+    </levels>
+    <music>
+      <active>
+        CaveStory1.mp3
+      </active>
+      <passive>
+        CaveStory1.mp3
+      </passive>
+    </music>
+	</Asset>
+</XnaContent>

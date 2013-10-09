@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        3992,1316
+      </bounds>
+      <music>
+        Music/Synchro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+        hplatform12
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        1500,312
+      </startlocation>
+      <goalregion>
+        2488,368,50,50
+      </goalregion>
+      <commands>
+        ML_Lim 1
+        MR_Lim 0
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim 1
+        WC_Lim 0
+        UI_Lim 1
+      </commands>
+      <platforms>
+        rec 0,976,192,96
+        nogravity
+        nopatrol
+        hazardous
+        hplatform2
+        notrigger
+        through
+        notile
+        rec 1440,960,160,80
+        nogravity
+        ptl 50,0,0
+        hazardous
+        hplatform2
+        trigger 1744,952,648,72
+        through
+        notile
+        rec 216,1024,2592,288
+        nogravity
+        nopatrol
+        nohazardous
+        platform31
+        notrigger
+        nothrough
+        tile
+        rec 2392,608,160,416
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        through
+        tile
+        rec 2312,416,224,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        through
+        tile
+        rec 2280,704,32,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 2152,704,32,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 2152,928,160,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        through
+        tile
+        rec 2184,704,96,224
+        nogravity
+        nopatrol
+        hazardous
+        hplatform8
+        notrigger
+        through
+        tile
+        rec 2312,0,32,320
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        through
+        tile
+        rec 2184,416,96,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform27
+        notrigger
+        through
+        tile
+        rec 2280,320,32,288
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 2152,320,32,288
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 1920,88,64,768
+        nogravity
+        nopatrol
+        nohazardous
+        platform28
+        notrigger
+        nothrough
+        tile
+        rec 216,224,288,800
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        through
+        tile
+        rec 936,904,160,32
+        nogravity
+        ptl 0,-4,90,0,4,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 1264,992,128,32
+        nogravity
+        ptl 0,-5,0
+        nohazardous
+        platform21
+        trigger 1264,960,128,40
+        through
+        tile
+        rec 1232,928,32,96
+        nogravity
+        ptl 0,-5,0
+        nohazardous
+        platform21
+        trigger 1264,960,128,40
+        through
+        tile
+        rec 528,712,160,32
+        nogravity
+        ptl 3,0,120,-3,0,120
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 936,520,160,32
+        nogravity
+        ptl 0,4,90,0,-4,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 768,616,160,32
+        nogravity
+        ptl -3,-2,90,3,2,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 768,816,160,32
+        nogravity
+        ptl -3,2,90,3,-2,90
+        nohazardous
+        platform8
+        notrigger
+        through
+        tile
+        rec 2552,352,256,672
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        nothrough
+        tile
+        rec 1392,384,352,640
+        nogravity
+        nopatrol
+        nohazardous
+        platform38
+        notrigger
+        nothrough
+        tile
+      </platforms>
+      <doodads>
+      </doodads>
+      <enemies>
+        rec 2312,936,72,88
+        nopatrol
+        tex 0
+      </enemies>
+      <items>
+        rec 560,680,32,32
+        shuriken
+      </items>
+      <ropes>
+        2296,608,8,344
+        2168,608,8,344
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

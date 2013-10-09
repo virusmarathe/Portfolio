@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        2680,1920
+      </bounds>
+      <music>
+        Music/Synchro Ninja
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        platform1
+        platform2
+        platform3
+        platform4
+        platform5
+        platform6
+        platform7
+        platform8
+        platform9
+        platform10
+        platform11
+        platform12
+        platform13
+        platform14
+        platform15
+        platform16
+        platform17
+        platform18
+        platform19
+        platform20
+        platform21
+        platform22
+        platform23
+        platform24
+        platform25
+        platform26
+        platform27
+        platform28
+        platform29
+        platform30
+        platform31
+        platform32
+        platform33
+        platform34
+        platform35
+        platform36
+        platform37
+        platform38
+        hplatform1
+        hplatform2
+        hplatform3
+        hplatform4
+        hplatform5
+        hplatform6
+        hplatform7
+        hplatform8
+        hplatform9
+        hplatform10
+        hplatform11
+        hplatform12
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        doodad5
+        doodad6
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        2036,1108
+      </startlocation>
+      <goalregion>
+        1592,1536,50,50
+      </goalregion>
+      <commands>
+        ML_Lim -1
+        MR_Lim -1
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim -1
+        WC_Lim -1
+        UI_Lim -1
+      </commands>
+      <platforms>
+        rec 1776,1728,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1960,1880,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 2128,1880,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1776,1912,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 2256,1880,32,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 2368,1284,128,736
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1776,1560,320,64
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1224,1356,128,640
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        trigger 1224,1348,136,648
+        through
+        tile
+        rec 1376,1184,224,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1592,1584,64,320
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1904,1528,192,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1912,1300,32,128
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1776,1528,128,32
+        nogravity
+        nopatrol
+        hazardous
+        hplatform1
+        notrigger
+        through
+        tile
+        rec 1736,1184,32,224
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+        rec 1928,1184,288,32
+        nogravity
+        nopatrol
+        nohazardous
+        platform1
+        notrigger
+        through
+        tile
+      </platforms>
+      <doodads>
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+      </items>
+      <ropes>
+      </ropes>
+    </objects>
+	</Asset>
+</XnaContent>

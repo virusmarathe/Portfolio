@@ -1,0 +1,78 @@
+______________________
+MINIGOLF RENDERER API
+______________________
+
+CLASSES:
+----------------------------------------------------------------------------------------
+Ball, Tee, Cup:
+----------------------------------------------------------------------------------------
+To create a ball:
+Ball *ball = new Ball(double r, double x, double y, double z);
+
+It has properties such as position, direction, accerelation, speed, and friction.
+All of these have getter and setter functions.
+
+Update(): Updates the balls position. If the ball is given a speed and direction, it will
+move according to that as well as acceleration.
+
+Tee and Cup also have constructors to place them with getters and setters for position.
+
+----------------------------------------------------------------------------------------
+Tile:
+----------------------------------------------------------------------------------------
+The tile class contains a list of points, as well as a list of edges to other tiles.
+
+addPoint() - adds a point to the list
+addConnection() - adds an edge to the list
+getSize() - returns the number of points to make the tile
+
+
+----------------------------------------------------------------------------------------
+Player:
+----------------------------------------------------------------------------------------
+
+This class contains a player profile. There is a name, current score, and total score,
+all with getter and setter functions.
+
+incrementCurrentScore() adds one to the current score.
+
+----------------------------------------------------------------------------------------
+Camera:
+----------------------------------------------------------------------------------------
+
+This class contains all the camera modes, they are
+
+	REVOLVING_ON_BALL,
+	FREE_LOOK,
+	FIRST_PERSON
+
+The function switchMode() cycles through these modes.
+
+----------------------------------------------------------------------------------------
+PHYSICS:
+----------------------------------------------------------------------------------------
+
+There is a physics engine that deals with ball collisions.
+
+
+checkCollisions(Ball * ball, vector<Tile*> tiles): 
+checks the collision between the ball and where it is in the level and does the appropriate action.
+
+
+
+----------------------------------------------------------------------------------------
+NETWORKING:
+----------------------------------------------------------------------------------------
+
+There is a networking framework that allows for sending and recieving of data from server to clients
+Socket.h
+Socket.cpp - SendData(char * s)
+           - RcvData();
+
+
+----------------------------------------------------------------------------------------
+UTIL:
+----------------------------------------------------------------------------------------
+
+Util function that allows for all the vector manipulation as well as
+some string to double functions. many useful functions basically.

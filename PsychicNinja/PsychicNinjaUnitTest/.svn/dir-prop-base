@@ -1,0 +1,31 @@
+K 10
+svn:ignore
+V 510
+HTML.xslt
+NUnitXml.xslt
+bin
+obj
+xunit.console.clr4.exe
+xunit.console.clr4.exe.config
+xunit.console.clr4.x86.exe
+xunit.console.clr4.x86.exe.config
+xunit.console.exe
+xunit.console.exe.config
+xunit.console.x86.exe
+xunit.console.x86.exe.config
+xunit.dll
+xunit.dll.tdnet
+xunit.extensions.dll
+xunit.extensions.xml
+xunit.gui.clr4.exe
+xunit.gui.clr4.x86.exe
+xunit.gui.exe
+xunit.gui.x86.exe
+xunit.installer.exe
+xunit.runner.msbuild.dll
+xunit.runner.tdnet.dll
+xunit.runner.utility.dll
+xunit.runner.utility.xml
+xunit.xml
+
+END

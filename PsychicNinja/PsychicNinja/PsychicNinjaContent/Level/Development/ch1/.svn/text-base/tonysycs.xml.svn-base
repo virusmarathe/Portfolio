@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+ 	<Asset Type="System.String">
+    <levelinfo>
+      <levelname>
+      </levelname>
+      <bounds>
+        1610,820
+      </bounds>
+      <music>
+        Music/City of Psychic Dreams
+        Music/City-Active
+      </music>
+      <tileset>
+        city-day
+      </tileset>
+    </levelinfo>
+    <textures>
+      <background>
+        backlayer0
+        backlayer1
+        backlayer2
+        backlayer3
+      </background>
+      <enemy>
+        Enemies/Muscle-Goon
+        Enemies/knife artist 1
+      </enemy>
+      <platform>
+        Concrete-Block
+        brickcenter
+        brickcorner
+        brickroof
+        brickside
+        roof2
+        girder2
+        girder3
+        girdermetal
+        2-way angled connector
+        2-way pipe
+        4-way pipe
+      </platform>
+      <doodad>
+        treeoflife
+        stick
+        lolampnight
+        hydralisklight
+        large cloud gray
+        large cloud white
+      </doodad>
+    </textures>
+    <objects>
+      <startlocation>
+        20,630
+      </startlocation>
+      <goalregion>
+        1390,620,50,50
+      </goalregion>
+      <commands>
+        ML_Lim -1
+        MR_Lim -1
+        Ju_Lim -1
+        WJ_Lim -1
+        WS_Lim -1
+        WC_Lim -1
+        UI_Lim -1
+      </commands>
+      <platforms>
+        rec 0,690,1500,30
+        nogravity
+        nopatrol
+        nohazardous
+        tex 8
+        rec 400,610,100,80
+        nogravity
+        nopatrol
+        nohazardous
+        tex 1
+        rec 400,590,130,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 5
+        rec 580,530,150,170
+        nogravity
+        nopatrol
+        nohazardous
+        tex 1
+        rec 580,510,140,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 5
+        rec 790,410,180,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 5
+        rec 790,430,190,270
+        nogravity
+        nopatrol
+        nohazardous
+        tex 1
+        rec 1480,130,30,560
+        nogravity
+        nopatrol
+        nohazardous
+        tex 8
+        rec 1120,470,160,220
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 1120,450,160,30
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 500,610,30,60
+        nogravity
+        nopatrol
+        nohazardous
+        tex 4
+        rec 500,670,20,30
+        nogravity
+        nopatrol
+        nohazardous
+        tex 2
+        rec 660,260,400,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 10
+        rec 810,160,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 540,110,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 430,380,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 550,430,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 820,340,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 370,120,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 380,230,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+        rec 610,230,90,20
+        nogravity
+        nopatrol
+        nohazardous
+        tex 0
+      </platforms>
+      <doodads>
+        rec 130,620,30,80
+        tex 1
+        rec 430,550,40,40
+        tex 1
+      </doodads>
+      <enemies>
+      </enemies>
+      <items>
+      </items>
+    </objects>
+	</Asset>
+</XnaContent>

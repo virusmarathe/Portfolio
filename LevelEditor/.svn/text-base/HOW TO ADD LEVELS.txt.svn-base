@@ -1,0 +1,6 @@
+For future reference:
+
+1) add level to the project
+2) under its properties change the build action to "none"
+3) under copy to output directory change to "copy if newer"
+4) in the file chapterinfo.xml make sure the number of levels match the number that are in your project.

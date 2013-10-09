@@ -1,0 +1,656 @@
+using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
+using Microsoft.Xna.Framework.Media;
+
+using PsychicNinja.Data.Util;
+using PsychicNinja.Interface;
+using PsychicNinja.Interface.Gameplay;
+using PsychicNinja.Data.Parser;
+using PsychicNinja.Data.Object;
+using PsychicNinja.Logic;
+using System.IO.IsolatedStorage;
+using System.Xml.Serialization;
+using System.IO;
+using PsychicNinja.Interface.Engine;
+using System.Collections.Generic;
+
+namespace PsychicNinja
+{
+    /// <summary>
+    /// This is the main type for your game
+    /// </summary>
+    ///
+
+    public class Game1 : Microsoft.Xna.Framework.Game
+    {
+        GraphicsDeviceManager graphics;
+        SpriteBatch spriteBatch;
+
+        //Set to false to disable music if it bothers you
+        
+        
+        /*bool enableMusic = true;
+
+        SoundEffect menuMusic;
+        SoundEffect cityActiveMusic;
+        SoundEffect cityPassiveMusic;
+        SoundEffectInstance menuMusicInstance;
+        SoundEffectInstance cityActiveInstance;
+        SoundEffectInstance cityPassiveInstance;*/
+
+        GameState gameRunState;
+
+        SaveGameData _gameData;
+        private const string FileName = "GameData.exhd";
+
+        TitleScreen titleScreen;
+        GameMenu levelMenu;
+        PauseMenu pauseMenu;
+        Cutscene activeCutscene;
+
+        GameUI uiManager;
+        WorldObjectManager objectManager;
+        
+        int[] tempCommandLimits = { 10, 4, 6, 3, 1, 5, 2 };
+
+        Command chosen;
+
+        int currentGameRunTime;
+
+        /// <summary>
+        /// Random number generator used by the entire program
+        /// </summary>
+        public static Random RapperRandomDiggityDawg = new Random();
+
+        WeakReference gcTracker = new WeakReference(new object());
+
+        public Game1()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 480;
+
+            graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
+
+            // Frame rate is 30 fps by default for Windows Phone.
+            //TargetElapsedTime = TimeSpan.FromTicks(333333);
+            //experimenting with 60 fps
+            TargetElapsedTime = TimeSpan.FromMilliseconds(1000.0 / 30.0);
+            gameRunState = GameState.StateLoading;
+
+            View.Content = Content;
+
+            LoadLastLevel();
+
+            //MusicManager.soundEnabled = false;
+        }
+
+        /// <summary>
+        /// Allows the game to perform any initialization it needs to before starting to run.
+        /// This is where it can query for any required services and load any non-graphic
+        /// related content.  Calling base.Initialize will enumerate through any components
+        /// and initialize them as well.
+        /// 
+        /// DO NOT MODIFY THIS FUNCTION!! - Austin
+        /// </summary>
+        protected override void Initialize()
+        {
+            base.Initialize();
+
+            GraphicsDevice.Present();
+
+            // TODO: Add your initialization logic here
+            TouchPanel.EnabledGestures = GestureType.Tap |
+                                         GestureType.Hold |
+                                         GestureType.DoubleTap |
+                                         GestureType.FreeDrag |
+                                         GestureType.DragComplete |
+                                         GestureType.Flick |
+                                         GestureType.Pinch;
+            //LoadLastLevel();
+            titleScreen = new TitleScreen(graphics, _gameData);
+            MediaPlayer.IsRepeating = true;
+
+            chosen = null;
+
+            gameRunState = GameState.StateMenu;
+        }
+
+        /// <summary>
+        /// LoadContent will be called once per game and is the place to load
+        /// all of your content.  Remember LoadContent happens only during the base.Initialize call!
+        /// </summary>
+        protected override void LoadContent()
+        {
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+
+            /*menuMusic = Content.Load<SoundEffect>("Music/Psychic Ninja");
+            cityActiveMusic = Content.Load<SoundEffect>("Music/City-Active");
+            cityPassiveMusic = Content.Load<SoundEffect>("Music/City-Passive");
+
+            menuMusicInstance = menuMusic.CreateInstance();
+            cityActiveInstance = cityActiveMusic.CreateInstance();
+            cityPassiveInstance = cityPassiveMusic.CreateInstance();*/
+
+            WorldObjectManager.LoadContent(Content);
+            MusicManager.LoadContent(Content);
+            CommandMenu.LoadContent(Content);
+            PauseMenu.LoadContent(Content);
+            Command.LoadContent(Content);
+            Player.LoadContent(Content);
+            Item.LoadContent(Content);
+            SuspendRope.LoadContent(Content);
+            Rope.LoadContent(Content);
+            GameUI.LoadContent(Content);
+            CommandTarget.LoadContent(Content);
+            GameMenu.LoadContent(Content);
+        }
+
+        /// <summary>
+        /// UnloadContent will be called once per game and is the place to unload
+        /// all content.
+        /// </summary>
+        protected override void UnloadContent()
+        {
+            // TODO: Unload any non ContentManager content here
+        }
+
+        #region Touch Processing
+
+        /// <summary>
+        /// Pass touches to game menu and handle responses.
+        /// </summary>
+        /// <param name="gesture"></param>
+        private void processTitleScreenTouch(GameTime gameTime, GestureSample gesture)
+        {
+            string filename = titleScreen.ProcessTouch(gesture, _gameData);
+            if (filename == null) return;
+
+            CurrentLevelNumber = titleScreen.SelectedLevelNum;
+            CurrentChapterNumber = titleScreen.SelectedChapterNum;
+
+            //if we reached this point, ProcessTouch returned a level pathname
+            titleScreen = null;
+            gameRunState = GameState.StateWorld;
+            AdvanceToNextLevel(gameTime);
+            uiManager = new GameUI();
+        
+        }
+
+        /// <summary>
+        /// Handle touches to the between levels menu. I separated these for clarity. 
+        /// </summary>
+        /// <param name="gesture"></param>
+        private void processLevelMenuTouch(GameTime gameTime, GestureSample gesture)
+        {
+            levelMenu.ProcessTouch(gesture);
+
+            switch (levelMenu.flag)
+            {
+                case GameMenuFlag.LoadNextLevel:
+                    AdvanceToNextLevel(gameTime);
+                    break;
+
+                case GameMenuFlag.ToTitleScreen:
+                    MusicManager.StopMusic();
+                    titleScreen = new TitleScreen(graphics, _gameData);
+                    gameRunState = GameState.StateMenu;
+                    break;
+                case GameMenuFlag.Replay:
+                    /*if (cityActiveInstance.State == SoundState.Playing)
+                        cityActiveInstance.Pause();
+                    if (menuMusicInstance.State == SoundState.Playing)
+                        menuMusicInstance.Pause();*/
+                    objectManager.WOMstate = WOMState.InLevel;
+                    stopGame();
+                    break;
+
+            }
+        }
+        private void processPauseMenuTouch(GameTime gameTime, GestureSample gesture)
+        {
+            pauseMenu.ProcessTouch(gesture);
+
+            switch (pauseMenu.flag)
+            {
+                case GameMenuFlag.LoadNextLevel:
+                    AdvanceToNextLevel(gameTime);
+                    break;
+
+                case GameMenuFlag.ToTitleScreen:
+                    MusicManager.StopMusic();
+                    titleScreen = new TitleScreen(graphics, _gameData);
+                    gameRunState = GameState.StateMenu;
+                    break;
+                case GameMenuFlag.Replay:
+                    /*if (cityActiveInstance.State == SoundState.Playing)
+                        cityActiveInstance.Pause();
+                    if (menuMusicInstance.State == SoundState.Playing)
+                        menuMusicInstance.Pause();*/
+                    objectManager.WOMstate = WOMState.InLevel;
+                    stopGame();
+                    break;
+                case GameMenuFlag.LoadSpecificLevel:
+                    int levelnumber = LevelParser.getCurrentLevelNumber();
+                    string path = LevelParser.getReadTarget();
+                    objectManager = new WorldObjectManager(graphics, Content, string.Concat(path.Substring(0, path.LastIndexOf("/") + 1), levelnumber.ToString() + ".xml"), levelnumber);
+                    stopGame();
+                    break;
+
+            }
+        }
+
+        private static int commandSize = 50;
+        private static int commandHalf = commandSize / 2;
+
+        /// <summary>
+        /// Perform the appropriate action based on teh button pressed.
+        /// </summary>
+        /// <param name="gbp"></param>
+        public void ProcessGameUITouch(GameTime gameTime, GameButtonPressed gbp)
+        {
+            switch (gbp)
+            {
+                case GameButtonPressed.StartGame:
+                    startGame(gameTime);
+                    break;
+                case GameButtonPressed.StopGame:
+                    stopGame();
+                    break;
+                case GameButtonPressed.PauseGame:
+                    pauseGame();
+                    break;
+                case GameButtonPressed.ZoomIn:
+                    Spotlight.AdjustStageZoomLevel(false);
+                    break;
+                case GameButtonPressed.ZoomOut:
+                    Spotlight.AdjustStageZoomLevel(true);
+                    break;
+                case GameButtonPressed.FastForward:
+                    Spotlight.toggleFastForward();
+                    break;
+            }
+        }
+
+        private void HandleGestureSample(GameTime gameTime, GestureSample gesture)
+        {
+            switch (gameRunState)
+            {
+                case GameState.StateLoading:
+                    break;
+                case GameState.StateMenu:
+                    processTitleScreenTouch(gameTime, gesture);
+                    break;
+                case GameState.StateWorld:
+                    //check if any icon on the UI was touched
+                    //(sidebar here)
+                        
+                    GameButtonPressed gbpw = uiManager.ProcessInput(gesture);
+                    //otherwise check and see if any non-sidebar part of the level UI was pressed
+                    //(start/stop/pause button here)
+                    if (gbpw != GameButtonPressed.None)
+                    {
+                        ProcessGameUITouch(gameTime, gbpw);
+                        break;
+                    }
+
+                    if (!objectManager.ProcessTouch(gesture))
+                    {
+                        Spotlight.ProcessTouch(gesture);
+
+
+                    }
+                    break;
+                case GameState.StateRunning:
+                    GameButtonPressed gbpr = uiManager.ProcessInput(gesture);
+                    if (gbpr != GameButtonPressed.None)
+                    {
+                        ProcessGameUITouch(gameTime, gbpr);
+                        break;
+                    }
+                    break;
+
+                case GameState.StateCompleted:
+                    if (levelMenu != null && levelMenu.RespondsToGesture(gesture))
+                    {
+                        processLevelMenuTouch(gameTime, gesture);
+                        break;
+                    }
+                    break;
+                case GameState.StatePaused:
+                    if (pauseMenu != null && pauseMenu.RespondsToGesture(gesture))
+                    {
+                        processPauseMenuTouch(gameTime, gesture);
+                    }
+                    break;
+                case GameState.StateCutscene:
+                    if (activeCutscene.ProcessTouch(gesture))
+                    {
+                        gameRunState = GameState.StateWorld;
+                        activeCutscene = null;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Check for and delegate a touch from the user.
+        /// </summary>
+        private void getTouchInput(GameTime gameTime)
+        {
+#if WINDOWS_PHONE
+            TouchCollection touches = TouchPanel.GetState();
+            while (TouchPanel.IsGestureAvailable)
+            {
+                GestureSample gesture = TouchPanel.ReadGesture();
+
+                HandleGestureSample(gameTime, gesture);
+            }
+
+#else
+            MouseState m = Mouse.GetState();
+            if (m.LeftButton == ButtonState.Pressed)
+            {
+                HandleGestureSample(new GestureSample(GestureType.Tap, new TimeSpan(), new Vector2(m.X, m.Y), Vector2.Zero, Vector2.Zero, Vector2.Zero));
+
+            }
+            
+#endif
+        }
+
+        #endregion
+
+        #region Game Controls
+
+        /// <summary>
+        /// Update all objects associated with the game world. Aggregates code from other cases. 
+        /// </summary>
+        public void updateGameWorld()
+        {
+            uiManager.Update(gameRunState, chosen);
+            objectManager.UpdateAll(currentGameRunTime, gameRunState);
+            Spotlight.Update(gameRunState);
+            TargetElapsedTime = TimeSpan.FromMilliseconds(Spotlight.getNewFPS());
+        }
+
+        /// <summary>
+        /// Starts the game.
+        /// </summary>
+        public void startGame(GameTime gameTime)
+        {
+            //objectManager.StartTime =;
+
+            objectManager.HideCommandMenuTemporarily();
+            gameRunState = GameState.StateRunning;
+            objectManager.WOMstate = WOMState.RunningLevel;
+            Spotlight.saveOffset();
+        }
+
+        /// <summary>
+        /// Stops the game and resets the level.
+        /// </summary>
+        public void stopGame()
+        {
+            // Reset ninja and game world.
+            gameRunState = GameState.StateWorld;
+            objectManager.WOMstate = WOMState.StoppedLevel;
+            currentGameRunTime = 0;
+
+            objectManager.resetButton(Content);
+            Spotlight.loadOffset();
+        }
+
+        /// <summary>
+        /// Pauses the game while its running without resetting the level.
+        /// </summary>
+        public void pauseGame()
+        {
+            // Pause Game
+            pauseMenu = new PauseMenu();
+            gameRunState = GameState.StatePaused;
+        }
+
+        #endregion
+
+        #region Level Loading
+
+        private static string[] ChapterPaths = {
+                                            "City/",
+                                            "City-Challenge/",
+                                            "Cave/",
+                                            "Cave-Challenge/",
+                                        };
+        private static string ContentDirectory = "Content/Level/Official/";
+
+        int CurrentLevelNumber = 0;
+        int CurrentChapterNumber = 0;
+
+        private void AdvanceToNextLevel(GameTime gameTime)
+        {
+            _gameData.levelReached[CurrentChapterNumber] = CurrentLevelNumber;
+            ++CurrentLevelNumber;
+
+            switch (CurrentLevelNumber)
+            {
+                case 1:
+                    //play start cutscene. then start the level.
+                    if (CurrentChapterNumber == 0 && _gameData.levelReached[CurrentChapterNumber] == 0)
+                    {
+                        activeCutscene = new Cutscene("Cutscenes/intro");
+                        gameRunState = GameState.StateCutscene;
+                    }
+                    goto default;
+                case 11:
+                    CurrentLevelNumber = 1;
+                    ++CurrentChapterNumber;
+                    goto default;
+                default:
+                    try
+                    {
+                        objectManager = new WorldObjectManager(graphics, Content, string.Concat(ContentDirectory, ChapterPaths[CurrentChapterNumber], CurrentLevelNumber.ToString(), ".xml"), CurrentLevelNumber);
+  
+                        objectManager.StartTime = gameTime.TotalGameTime;
+                    }
+                    catch (System.Xml.XmlException e)
+                    {
+                        // Next level doesnt exist. Go to next chapter.
+                        goto case 11;
+
+                    }
+                    catch (System.IndexOutOfRangeException e)
+                    {
+                        // Next chapter doesnt exist. You've beaten the game.
+
+                    }
+                    break;
+            }
+            SaveData();
+
+            stopGame();
+        }
+
+
+        #endregion
+
+        /// <summary>
+        /// Allows the game to run logic such as updating the world,
+        /// checking for collisions, gathering input, and playing audio.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected override void Update(GameTime gameTime)
+        {
+            if (!gcTracker.IsAlive)
+            {
+                System.Diagnostics.Debug.WriteLine("A garbage collection occurred!");
+                gcTracker = new WeakReference(new object());
+            }
+
+            getTouchInput(gameTime);
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
+
+            switch(gameRunState)
+            {
+                case GameState.StateLoading:
+                    break;
+                case GameState.StateMenu:
+                    titleScreen.Update();
+                    break;
+                //State where game is stopped
+                case GameState.StateWorld:
+                    if (activeCutscene != null)
+                    {
+                        gameRunState = GameState.StateCutscene;
+                    }
+                    else
+                    {
+                        updateGameWorld();
+                    }
+                    break;
+                //State where ninja is running through level
+                case GameState.StateRunning:
+                    updateGameWorld();
+                    currentGameRunTime++;
+
+                    //if the level was just completed, create the completion screen and pass in the completion time
+                    if (objectManager.WOMstate == WOMState.LevelComplete)
+                    {
+                        bool newrecord;
+                        int number = (LevelParser.getCurrentLevelNumber() - 1) + (10 * (LevelParser.getCurrentChapterNumber() - 1));
+                        TargetElapsedTime = TimeSpan.FromMilliseconds(1000.0 / 30.0);
+                        TimeSpan t = gameTime.TotalGameTime - objectManager.StartTime;
+                        TimeSpan r = new TimeSpan((long)_gameData.RecordTimeInTicks[number]);
+                        if (t.Ticks < r.Ticks)
+                        {
+                            newrecord = true;
+                            _gameData.RecordTimeInTicks[number] = t.Ticks;
+                        }
+                        else
+                            newrecord = false;
+
+                        if (CurrentLevelNumber == LevelParser.getChapterLevelCount())
+                            levelMenu = new ChapterCompletionScreen(t, r, newrecord);
+                        else
+                            levelMenu = new CompletionScreen(t, r, newrecord);
+                        gameRunState = GameState.StateCompleted;
+                    }
+
+                    break;
+
+                //State where the game is displaying the completion menu
+                case GameState.StateCompleted:
+                    // Handled so that the default case doesn't crash us. 
+                    levelMenu.Update();
+                    break;
+                case GameState.StatePaused:
+                    pauseMenu.Update();
+                    break;
+                case GameState.StateCutscene:
+                    activeCutscene.Update();
+                    break;
+                default:
+                    throw new Exception("Invalid Game State encountered in Game1.Update(). ");
+            }
+
+
+            base.Update(gameTime);
+        }
+
+        /// <summary>
+        /// This is called when the game should draw itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.White);
+
+            spriteBatch.Begin();
+
+            switch (gameRunState)
+            {
+                case GameState.StateLoading:
+
+                    break;
+                case GameState.StateMenu:
+                    titleScreen.Draw(spriteBatch);
+                    break;
+                case GameState.StateWorld:
+                    objectManager.DrawAll(spriteBatch);
+                    uiManager.Draw(spriteBatch);
+                    break;
+                case GameState.StateRunning:
+                    objectManager.DrawAll(spriteBatch);
+                    uiManager.Draw(spriteBatch);
+                    break;
+                case GameState.StateCompleted:
+                    objectManager.DrawAll(spriteBatch);
+                    levelMenu.Draw(spriteBatch);
+                    break;
+                case GameState.StatePaused:
+                    objectManager.DrawAll(spriteBatch);
+                    pauseMenu.Draw(spriteBatch);
+                    break;
+                case GameState.StateCutscene:
+                    activeCutscene.Draw(spriteBatch);
+                    break;
+                default:
+                    throw new Exception("Invalid Game State encountered in Game1.Draw().");
+            }
+   
+            spriteBatch.End();
+
+            base.Draw(gameTime);
+        }
+          /*private Rectangle getBGRect(){
+              int distance = 1;
+              Rectangle temp = new Rectangle(0-Spotlight.getOffsetX() / distance, 0-Spotlight.getOffsetY() / distance, backGround.Width, backGround.Height);
+              return temp;
+          }*/
+
+        private void SaveData()
+        {
+            using (var storage = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                storage.DeleteFile(FileName);
+                using (var stream = storage.CreateFile(FileName))
+                {
+                    var serializer = new XmlSerializer(typeof(SaveGameData));
+                    serializer.Serialize(stream, _gameData);
+                }
+            }
+
+        }
+
+        private void LoadLastLevel()
+        {
+            using (var storage = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                if (storage.FileExists(FileName))
+                {
+                    using (var stream = storage.OpenFile(FileName, FileMode.Open))
+                    {
+                        var xml = new XmlSerializer(typeof(SaveGameData));
+                        _gameData = (SaveGameData)xml.Deserialize(stream);
+                    }
+
+                }
+                else
+                {
+                    _gameData = new SaveGameData();
+                }
+            }
+        }
+
+
+    }
+}

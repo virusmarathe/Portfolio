@@ -3,4 +3,5 @@ All projects have a solution file for visual C++ for ease of access.
 
 It includes:
 - Psychic Ninja (Senior Game Design Final Project)
+- Level Editor Tool created for Psychic Ninja
 - 3D OpenGL Game Engine (C++)

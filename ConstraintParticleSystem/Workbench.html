@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://labs.vocareum.com/main/main.php?m=editor&asnid=2297 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Workbench</title>
+ <link rel="shortcut icon" href="https://labs.vocareum.com/shared/ico/favicon.ico" type="image/x-icon"> 
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta http-equiv="expires" content="Sun, 01 Jan 2014 00:00:00 GMT">
+<meta http-equiv="pragma" content="no-cache">
+
+<!-- imported -->
+		<!--basic styles-->
+
+		<link href="https://labs.vocareum.com/shared/ace/assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://labs.vocareum.com/shared/ace/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/font-awesome.min.css">
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="../shared/ace/assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+		<!--page specific plugin styles-->
+
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/jquery-ui-1.10.3.custom.min.css">
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/jquery.gritter.css">
+		
+		
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/colorbox.css">
+
+		<!--fonts-->
+
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/ace-fonts.css">
+
+		<!--ace styles-->
+        <link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/chosen.css">
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/ace.min.css">
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/ace-responsive.min.css">
+		<link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/ace-skins.min.css">
+        <link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/datepicker.css">
+        <link rel="stylesheet" href="https://labs.vocareum.com/shared/ace/assets/css/jsPanel.css">
+        
+
+
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="../shared/ace/assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- Vocareum styles -->
+		
+		<link rel="stylesheet" href="https://labs.vocareum.com/main/vocareum.css">
+
+
+
+<!-- js start -->
+	<!-- jquery start -->
+		<!--[if !IE]>-->
+		<script async="" src="./Workbench_files/analytics.js"></script><script type="text/javascript">
+			window.jQuery || document.write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'>"+"<"+"/script>");
+		</script><script src="./Workbench_files/jquery.min.js"></script>
+
+		<!--<![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='../shared/ace/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='../shared/ace/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script><script src="./Workbench_files/jquery.mobile.custom.min.js"></script>
+
+		<script src="./Workbench_files/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="./Workbench_files/jquery.ui.touch-punch.min.js"></script>
+		<script src="./Workbench_files/jquery.easy-pie-chart.min.js"></script>
+		<script src="./Workbench_files/fuelux.wizard.min.js"></script>
+		<script src="./Workbench_files/jquery.jspanel.js"></script>
+	<!-- jquery end -->
+
+<!-- js end -->
+
+		<script src="./Workbench_files/bootstrap.min.js"></script>
+		<script src="./Workbench_files/ace.js"></script>
+		<script src="./Workbench_files/ace-extra.min.js"></script>
+		<script src="./Workbench_files/bootbox.min.js"></script>
+
+		<script src="./Workbench_files/jquery.autosize-min.js"></script>
+		<script src="./Workbench_files/chosen.jquery.min.js"></script>
+        <script src="./Workbench_files/bootstrap-datepicker.min.js"></script>
+        
+        <script src="./Workbench_files/bootstrap-tag.min.js"></script>
+		
+        <script src="./Workbench_files/jquery.validate.min.js"></script>
+        <script src="./Workbench_files/additional-methods.min.js"></script>
+		<script src="./Workbench_files/jquery.tmpl.min.js"></script>
+        <script src="./Workbench_files/jquery.cookie.js"></script>
+
+<style type="text/css">
+  html,
+  body {
+	height: 100%;
+	font-size: 95%;
+	background-color: rgb(248,248,248)!important;
+  }
+
+  #wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -30px;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push,
+  #footer {
+	height: 30px;
+  }
+  #footer {
+	background-color: #333;
+	color: #ccc;
+  }
+
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 767px) {
+	#footer {
+	  margin-left: -20px;
+	  margin-right: -20px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	}
+  }
+  
+    /* one more CSS fixes as necessary */
+  @media (max-width: 979px) {
+	#page-content {
+	}
+  }
+  
+
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+
+  #wrap > .container {
+	padding-top: 60px;
+  }
+  .container .credit {
+	margin: 20px 0;
+  }
+
+  code {
+	font-size: 80%;
+  }
+
+
+</style>
+
+		<style>
+			.spinner-preview {
+				width:100px;
+				height:100px;
+				text-align:center;
+				margin-top:60px;
+			}
+
+			.dropdown-preview {
+				margin:0 5px;
+				display:inline-block;
+			}
+			.dropdown-preview  > .dropdown-menu {
+				display: block;
+				position: static;
+				margin-bottom: 5px;
+			}
+		</style>
+
+</head>
+<body>
+<div id="wrap">
+	<div class="navbar navbar-inverse">
+
+	<!--<div class="navbar navbar-inverse">-->
+	  <div class="navbar-inner">
+	   <div class="row-fluid">
+		  <a class="brand" href="http://www.vocareum.com/" style="margin: -3px 0px -5px 5px; padding-left:0px; padding-right:0px;"></a>
+		<div id="vocnav2" class="">
+		
+		  <ul class="nav pull-right ace-nav" style="float:right !important; background-color:transparent !important; border:none !important;">						
+
+					<li class="vocnav light-blue user-profile voclabs_label">
+						<a class="voctext" href="https://labs.vocareum.com/main/main.php"> Labs</a>
+					</li>
+					<li class="vocnav voclabs_icon">
+						<a class="voctext" href="https://labs.vocareum.com/main/main.php">
+              <i class="icon-beaker"></i>
+						</a>
+					</li>
+
+				
+						
+
+				
+							
+			<li class="vocnav light-blue user-profile voc-no-mini">
+				<a class="voctext" href="http://help.vocareum.com/category/31-students?sort=name">Help</a>
+			</li>
+
+
+							<li class="vocnav">
+                    <a href="https://labs.vocareum.com/main/main.php?m=mymessages">
+                        <i class="icon-envelope"></i>
+                    </a>
+					                </li>
+				
+				<li class="vocnav light-blue user-profile vocnav-last">
+					<a class="user-menu dropdown-toggle" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" data-toggle="dropdown">
+						<img alt="vmarathe@usc.edu" src="./Workbench_files/avatar.png" class="vocuser-photo">
+						<span id="user_info" class="voctext">
+							vmarathe@usc.edu						</span>
+						<i class="icon-caret-down"></i>
+					</a>
+					<ul id="user_menu" class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+						<li class=""><a href="https://labs.vocareum.com/main/main.php?m=account"><i class="icon-cogs"></i> Settings</a></li>							
+							
+						                                                						<li><a href="https://labs.vocareum.com/main/logout.php"><i class="icon-off"></i> Logout</a></li>
+					</ul>
+				</li>
+							
+		  </ul><!--/nav-->	
+		  </div> <!-- end of span -->
+	   </div><!--/container-fluid-->
+	  </div><!--/navbar-inner-->
+	</div><!--/navbar-->
+	<div>	
+		<div class="clearfix">
+
+					
+
+<div class="breadcrumbs  " style="background-color:rgb(255,255,255);"><div class="pull-right"><button id="help-window" class="btn btn-warning vocbtn vocbtn-warning">Instructions</button></div>
+					<ul class="breadcrumb voctext" id="breadcrumb" style="margin-left: 12px !important;">
+                                                <li>
+                            <span id="breadcrumb-type-link"><a style="color: rgb(76, 143, 189);" href="https://labs.vocareum.com/main/main.php?m=course&code=vc_2_0_USC_003&step=2297">USC - CS 561</a></span>
+                        </li>
+                                                				<li class="liprojbc"><span class="divider">/</span>
+				<span id="breadcrumb-proj-link"><a style="color: rgb(76, 143, 189);" href="https://labs.vocareum.com/main/main.php?m=course&code=vc_2_0_USC_003&step=2297">Homework3</a></span>
+			</li> <!-- proj end -->
+	
+                  											
+									
+			</ul>
+			<!-- TODO: cleanup -->
+			<div class="pull-right" id="breadcrumb-step-status">
+			</div>		
+								
+					<!--.breadcrumb-->
+</div>
+				
+				
+				
+			<div id="page-content" class="clearfix" style="background-color:rgb(248,248,248);margin: 5px 10px 0px 10px;">
+				<div class="row-fluid">
+
+<div class="alert alert-block alert-warning voc-only-mini-block" style="margin-bottom:0px">
+<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+	Vocareum is running in a minimized mode. Please increase browser width to enable all functionality.
+</div> 
+
+
+
+			
+
+
+<!-- PAGE CONTENT BEGINS HERE -->
+			<script type="text/javascript">	
+
+	var projtypespan_elem = document.getElementById("breadcrumb-type-link");
+	var projlinkspan_elem = document.getElementById("breadcrumb-proj-link");
+
+
+      projtypespan_elem.innerHTML = '<a style="color: rgb(76, 143, 189);" href="main.php?m=course&code=vc_2_0_USC_003&step=2297">USC - CS 561</a></span>';
+      projlinkspan_elem.innerHTML = 
+      '<a style="color: rgb(76, 143, 189);"  href="main.php?m=course&code=vc_2_0_USC_003&step=2297">Homework3</a></span>';
+  
+
+        $("#breadcrumb-step-block").detach();
+		
+	
+	
+
+	
+	</script>		
+
+
+	
+	
+
+<link rel="stylesheet" href="https://labs.vocareum.com/shared/codemirror/lib/codemirror.css">
+<script src="./Workbench_files/codemirror.js"></script>
+
+<script src="./Workbench_files/clike.js"></script>
+<script src="./Workbench_files/xml.js"></script>
+<script src="./Workbench_files/python.js"></script>
+<script src="./Workbench_files/php.js"></script>
+
+<link rel="stylesheet" href="https://labs.vocareum.com/shared/codemirror/theme/neat.css">
+
+<script src="./Workbench_files/javascript.js"></script>
+<script src="./Workbench_files/extra.js"></script> 
+<script src="./Workbench_files/active-line.js"></script>
+<script src="./Workbench_files/matchbrackets.js"></script>
+
+<script src="./Workbench_files/closebrackets.js"></script>
+<script src="./Workbench_files/closetag.js"></script>
+
+
+<script src="./Workbench_files/diff_match_patch.js"></script>
+<script src="./Workbench_files/merge.js"></script>
+<link rel="stylesheet" href="https://labs.vocareum.com/shared/codemirror/addon/merge/merge.css">
+
+<style type="text/css">
+#page-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    bottom: 10px;
+}
+
+#page-content > div,
+#page-content #editorbox,
+#page-content #editordiv,
+#page-content #editordiv > div,
+#page-content #editordiv .tab-content #filelisting .widget-box,
+#page-content #editordiv .tab-content #filelisting .widget-box .widget-body,
+
+#page-content #editordiv #editorTabs,
+
+#page-content #editordiv .tab-content,
+
+#page-content #editordiv .tab-content #filelisting {
+    height: 100%;
+    overflow: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#page-content #editordiv .tab-content #filelisting .widget-box {
+    margin: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#page-content #editordiv .tab-content #codeframe,
+#page-content #editordiv .tab-content #buildframe {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#page-content #editordiv .tab-content #codeframe #codeform0,
+#page-content #editordiv .tab-content #buildframe #buildtextarea {
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+}
+
+      
+.CodeMirror {
+    font-size: 13px;
+    border: 1px solid #eee;
+    width: auto;
+    height: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.CodeMirror-scroll {
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#buildtextarea {
+	background-color: white;
+    overflow: auto;
+    border: 1px solid light-gray;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.tree {
+  font-size: 12px;
+}
+
+#image-viewer-modal {
+    height: 80%;
+}
+
+#image-viewer-modal .modal-body {
+    max-height: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+}
+
+#image-viewer-modal .modal-body table,
+#image-viewer-modal .modal-body table tbody,
+#image-viewer-modal .modal-body table tbody td {
+    height: 100%;
+    width: 100%;
+}
+
+#image-viewer-modal .modal-body table tbody td {
+    text-align: center;
+}
+
+#image-viewer-modal .modal-body img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#other-viewer-modal {
+    height: 80%;
+}
+
+#other-viewer-modal .modal-body {
+    max-height: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+}
+
+#other-viewer-modal .modal-body table,
+#other-viewer-modal .modal-body table tbody,
+#other-viewer-modal .modal-body table tbody td {
+    height: 100%;
+    width: 100%;
+}
+
+#other-viewer-modal .modal-body table tbody td {
+    text-align: center;
+}
+
+#other-viewer-modal .modal-body img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+
+</style>
+
+	
+<div class="row-fluid voc-no-mini " id="editorbox"><!-- dirs and editor -->
+	
+		<!-- test -->
+    <div class="span12" id="editordiv" style="margin-left:0px;margin-right:0px;"><!-- editor and logs -->	
+
+	    <div> <!-- extra div -->
+			    <div class="tabbable" id="editorTabs" style="overflow:hidden"> <!-- start tabbable -->
+					    <ul class="nav nav-tabs"> <!-- ul tabs -->
+										
+                  <li class="pull-left" style="margin-right:2px;">
+                        <a id="viewerbtn" class="btn btn-info vocbtn2 vocbtn-info" style="min-width:30px !important;">
+                          <i id="icon-folder" class="icon-remove"></i>
+                          <span id="editor-label-explore">Files</span>
+                        </a>
+                  </li>
+										
+									
+									<!-- dropdown actions -->	
+                        <li class="dropdown pull-right" style="margin-left:3px; margin-right:4px;">
+                          <a id="actionsdropdown" data-toggle="dropdown" class="dropdown-toggle" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#">
+                            <span id="editor-label-actions">Actions</span>
+                            <b class="caret"></b>
+                          </a>
+
+                          <ul class="dropdown-menu dropdown-info dropdown-yellow pull-right dropdown-caret dropdown-close">
+
+                          									
+                                <li>
+                                  <a data-toggle="tab" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#codeframe" id="undocodebutton">
+                                    <i class="icon-undo"></i>
+                                    Undo Last Change (^Z)
+                                  </a>
+                                </li>	
+                          					
+      
+      
+            
+                                                          <li class="divider"></li>									
+                                <li>
+                                  <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#modal-table-diff" data-toggle="modal" id="diffbutton">
+                                    <i class="icon-columns"></i>
+                                    View Changes
+                                  </a>
+                                </li>	
+                          								
+      
+
+      
+                          <li class="divider"></li>
+                          <li>
+                              <a href="https://labs.vocareum.com/util/vcreset.php?asnid=2297&mode=s&vmd=100">
+                                  <i class="icon-undo"></i>
+                                    Reset assignment
+                                </a>
+                          </li>	
+                                     
+                          
+
+                          
+
+
+
+                          </ul>
+                        </li>						
+									<!-- dropdown end -->
+                  <!-- commands start -->
+                                          <!-- commands end -->
+
+
+                                
+                
+                	
+
+
+                	
+                                    <li class="pull-right" style="margin-left:4px;">
+                                      <a data-toggle="tab" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#buildframe" data-command="RUN" class="btn btn-info vocbtn2 vocbtn-info commandbutton">
+                                          Run
+                                      </a>
+                                    </li>	
+                	
+
+                	
+                
+                
+                 
+ 
+                
+                                            <li class="pull-right" id="libuild" style="margin-left:3px;">                            
+                                <a class="btn btn-danger vocbtn2 vocbtn-danger" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" onclick="confirmSubmitAsnBtn(&#39;../util/vcput.php?m=editor&amp;stepid=2298&amp;a=submitAssignmentStep&amp;q1=asnid=2297&#39;)">                                    
+                                      Submit
+                                  </a>
+                            </li>	                              
+                                
+                
+                													
+											
+                  <li class="active" id="codeli">
+                    <a data-toggle="tab" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#codeframe" id="codebtn">
+                      Editor
+                    </a>
+                  </li>
+                  
+                  <li id="buildli" class="">
+                    <a data-toggle="tab" href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#buildframe" id="buildbtn">
+                        <span id="editor-label-results" class="voc-bigmode-only">Console</span>
+                        <i class="icon icon-th-list voc-smallmode-only"></i>
+                    </a>
+                  </li>
+							</ul> <!-- ul tabs end -->
+                    <div style="margin-left:0px" class="row-span"> <!-- file menu -->
+                          <div class="span4" style="min-width:300px; text-align:center;padding:5px; margin:0px; 
+                              background-color:rgb(248, 248, 248);color: rgb(153, 153, 153);border:none;">
+
+                              <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="filenewbtn" class="btn btn-mini vocbtn_toolbar pull-left " style="display: block;">
+                                  New File
+                              </a>
+
+                              <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="foldernewbtn" class="btn btn-mini vocbtn_toolbar pull-left" style="display: block;">
+                                  New Folder
+                              </a>
+
+                              <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="fileuploadbtn" class="btn btn-mini vocbtn_toolbar pull-left" style="display: block;">
+                                   Upload
+                              </a>
+                              <form id="fileuploadform" action="https://labs.vocareum.com/util/vcsave.php?asnid=2297&mode=s&vmd=100&type=Upload" enctype="multipart/form-data" method="post" style="display:none">
+                                  <input type="hidden" id="input_uploadpath" name="filepath" value="">
+                                  <input type="file" id="fileuploadfield" name="fileuploadfield"> <input type="submit">
+                              </form>
+
+                              <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="filedelbtn" class="btn btn-mini vocbtn_toolbar pull-left" style="display: none;">
+                                  Delete
+                              </a>
+
+                              <div class="clearfix"></div> 
+                          </div>
+
+
+
+                          <div id="editor_current_file_div" class="alert alert-info" style="text-align:center;padding:7px 0px 0px 30px; margin:0px; 
+                            background-color:rgb(248, 248, 248);color: rgb(153, 153, 153);border:none;">
+                              File: 
+                              <span id="editor_current_file">work/bayes.py</span>
+                              <span id="editor-save-status" class="pull-right" style="padding-right:5px">Save pending</span>
+                          </div>
+
+										 </div>				 <!-- file menu end -->						
+
+
+
+
+										<div class="tab-content" style="padding:4px"> <!-- tab-content start -->
+                             <div id="filelisting" class="span1 show" style="margin-left:0px; width:300px; min-width:200px; max-width:500px"> <!-- listing -->
+                               <div id="innerfilelisting" style="min-width:300px;height:100%" "=""> <!-- prevents file name breaking -->                      
+                                    <div id="fileform" class="hide" style="text-align: center; padding: 0px; margin: 0px; color: rgb(153, 153, 153); border: none; display: none; background-color: rgb(248, 248, 248);">
+                                          <input class="pull-left span12" type="text" id="input_filename" placeholder="type name here" style="margin-bottom:0px">
+                                          <input type="hidden" id="input_filetype" value="folder">
+                                          <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="filecreatebtn" class="btn btn-mini btn-info vocbtn_toolbar pull-left">
+                                              Create
+                                          </a>
+                                          <a href="https://labs.vocareum.com/main/main.php?m=editor&asnid=2297#" id="filecancelbtn" class="btn btn-mini vocbtn_toolbar pull-left">
+                                              Cancel
+                                          </a>
+                                         <span id="filestatuslabel" style="font-size:12px;"></span>
+                                    </div> <!-- fileform -->
+                                    <div class="clearfix"></div> 
+
+                                    <div id="tree1" class="tree tree-selectable" style="background:white; height:90%"><div class="tree-folder" style="display:none;">				<div class="tree-folder-header">					<i class="icon-plus"></i>					<div class="tree-folder-name"></div>				</div>				<div class="tree-folder-content"></div>				<div class="tree-loader" style="display: none;"></div>			</div>			<div class="tree-item" style="display:none;">				<i class="icon-caret-right"></i>				<div class="tree-item-name"></div>			</div><div class="tree-folder" style="display: block;">				<div class="tree-folder-header">					<i class="icon-plus"></i>					<div class="tree-folder-name"><b>work</b></div>				</div>				<div class="tree-folder-content"></div>				<div class="tree-loader" style="display: none;"><div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div></div>			</div></div>
+
+
+                                    <script type="text/javascript">
+                                    var $assets = "assets";//this will be used in fuelux.tree-sampledata.js
+                                    </script>
+                                 </div> <!-- innerfilelisting -->
+                               </div>	<!-- filelisting end -->
+                                    
+                              <div class="span1 vocdivider ui-draggable" style="width:8px; height:100%; margin:0px; background:url(&#39;../shared/img/vocdivider-v.png&#39;) no-repeat scroll 3px 50% transparent;padding: 5px 0px;cursor: col-resize;"></div>
+              
+                              <textarea id="scratchpad" class="hide"></textarea>                               <div id="codeframe" class="tab-pane active">	
+                                  <form id="codeform0" style="margin-bottom:0px; height: 90%;">
+                                          <textarea id="codearea0" style="display: none;">Choose a file to load from the Files menu on the left</textarea><div class="CodeMirror cm-s-neat CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 668px; left: 62px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 29px;"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar" style="bottom: 0px; display: block;"><div style="width: 1px; height: 762px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="min-width: 772px; margin-left: 29px; min-height: 762px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1; display: none;"><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 637px; width: 1539px; height: 13px;"></div><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 650px; width: 0px; height: 13px;"></div></div><div class="CodeMirror-code"><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">1</div></div><pre><span class="cm-keyword">import</span> <span class="cm-variable">sys</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">2</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">3</div></div><pre><span class="cm-variable">inputFile</span> = <span class="cm-builtin">open</span>(<span class="cm-variable">sys</span>.<span class="cm-variable">argv</span>[<span class="cm-number">2</span>])</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">4</div></div><pre><span class="cm-variable">outputFile</span> = <span class="cm-builtin">open</span>(<span class="cm-string">'sample_input_inference.txt'</span>, <span class="cm-string">'w'</span>)</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">5</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">6</div></div><pre><span class="cm-variable">initialNums</span> = <span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>().<span class="cm-variable">split</span>()</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">7</div></div><pre><span class="cm-variable">numDiseases</span> = <span class="cm-builtin">int</span>(<span class="cm-variable">initialNums</span>[<span class="cm-number">0</span>]);</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">8</div></div><pre><span class="cm-variable">numPatients</span> = <span class="cm-builtin">int</span>(<span class="cm-variable">initialNums</span>[<span class="cm-number">1</span>]);</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">9</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">10</div></div><pre><span class="cm-variable">diseaseDatabase</span> = []</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">11</div></div><pre><span class="cm-variable">diseaseNames</span> = []</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">12</div></div><pre><span class="cm-variable">patientDatabase</span> = []</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">13</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">14</div></div><pre><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>, <span class="cm-variable">numDiseases</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">15</div></div><pre>  <span class="cm-variable">diseaseLine</span> = <span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>().<span class="cm-variable">split</span>()</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">16</div></div><pre>  <span class="cm-variable">diseaseName</span> = <span class="cm-variable">diseaseLine</span>[<span class="cm-number">0</span>]</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">17</div></div><pre>  <span class="cm-variable">symptomsNum</span> = <span class="cm-builtin">int</span>(<span class="cm-variable">diseaseLine</span>[<span class="cm-number">1</span>])</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">18</div></div><pre>  <span class="cm-variable">diseaseProb</span> = <span class="cm-builtin">float</span>(<span class="cm-variable">diseaseLine</span>[<span class="cm-number">2</span>])</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">19</div></div><pre>  <span class="cm-variable">symptomNames</span> = <span class="cm-builtin">eval</span>(<span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>())</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">20</div></div><pre>  <span class="cm-variable">symptomTrueProb</span> = <span class="cm-builtin">eval</span>(<span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>())</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">21</div></div><pre>  </pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">22</div></div><pre>  <span class="cm-variable">symptomFalseProb</span> = <span class="cm-builtin">eval</span>(<span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>())</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">23</div></div><pre>  <span class="cm-variable">symptomStore</span> = []</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">24</div></div><pre>  <span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span> (<span class="cm-number">0</span>, <span class="cm-variable">symptomsNum</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">25</div></div><pre>    <span class="cm-variable">symptomStore</span>.<span class="cm-variable">append</span>([<span class="cm-variable">symptomNames</span>[<span class="cm-variable">j</span>], <span class="cm-variable">symptomTrueProb</span>[<span class="cm-variable">j</span>], <span class="cm-variable">symptomFalseProb</span>[<span class="cm-variable">j</span>]])</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">26</div></div><pre>  <span class="cm-variable">diseaseDatabase</span>.<span class="cm-variable">append</span>(<span class="cm-variable">symptomStore</span>)</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">27</div></div><pre>  <span class="cm-variable">diseaseNames</span>.<span class="cm-variable">append</span>([<span class="cm-variable">diseaseName</span>, <span class="cm-variable">diseaseProb</span>])</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">28</div></div><pre>  </pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">29</div></div><pre><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>, <span class="cm-variable">numPatients</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">30</div></div><pre>  <span class="cm-variable">symptomsList</span> = []</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">31</div></div><pre>  <span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>, <span class="cm-variable">numDiseases</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">32</div></div><pre>    <span class="cm-variable">currentSymptoms</span> = <span class="cm-builtin">eval</span>(<span class="cm-variable">inputFile</span>.<span class="cm-variable">readline</span>())</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">33</div></div><pre>    <span class="cm-variable">symptomsList</span>.<span class="cm-variable">append</span>(<span class="cm-variable">currentSymptoms</span>)</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">34</div></div><pre>  <span class="cm-variable">patientDatabase</span>.<span class="cm-variable">append</span>(<span class="cm-variable">symptomsList</span>)</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">35</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">36</div></div><pre><span class="cm-comment">#diseaseDatabase contains all the symptoms for each disease and probabilities with symptoms</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">37</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">38</div></div><pre><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>,<span class="cm-variable">numPatients</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">39</div></div><pre>  <span class="cm-keyword">print</span> <span class="cm-string">"Patient-"</span><span class="cm-operator">+</span><span class="cm-builtin">str</span>(<span class="cm-variable">i</span>)</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">40</div></div><pre>  <span class="cm-variable">patientDict</span> = {}</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">41</div></div><pre>  <span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>,<span class="cm-variable">numDiseases</span>):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">42</div></div><pre>    <span class="cm-comment"># calculate the probability of effect given cause</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">43</div></div><pre>    <span class="cm-variable">posResult</span> = <span class="cm-number">1</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">44</div></div><pre>    <span class="cm-variable">negResult</span> = <span class="cm-number">1</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">45</div></div><pre>    <span class="cm-keyword">for</span> <span class="cm-variable">k</span> <span class="cm-operator">in</span> <span class="cm-builtin">range</span>(<span class="cm-number">0</span>, <span class="cm-builtin">len</span>(<span class="cm-variable">patientDatabase</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>])):</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">46</div></div><pre>      <span class="cm-keyword">if</span> <span class="cm-variable">patientDatabase</span>[<span class="cm-variable">i</span>][<span class="cm-variable">j</span>][<span class="cm-variable">k</span>] <span class="cm-operator">==</span> <span class="cm-string">'T'</span>:</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">47</div></div><pre>         <span class="cm-comment"># P(e|!c) = diseaseDatabase[j][k][2] P(e|c) = diseaseDatabase[j][k][1] P(c) = diseaseNames[j][1]</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">48</div></div><pre>        <span class="cm-variable">posResult</span> *= <span class="cm-variable">diseaseDatabase</span>[<span class="cm-variable">j</span>][<span class="cm-variable">k</span>][<span class="cm-number">1</span>];</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">49</div></div><pre>        <span class="cm-variable">negResult</span> *= <span class="cm-variable">diseaseDatebase</span>[<span class="cm-variable">j</span>][<span class="cm-variable">k</span>][<span class="cm-number">2</span>];</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">50</div></div><pre>    <span class="cm-variable">posResult</span> *= <span class="cm-variable">diseaseNames</span>[<span class="cm-variable">j</span>][<span class="cm-number">1</span>];</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">51</div></div><pre>    <span class="cm-variable">negResult</span> *= <span class="cm-variable">diseaseNames</span>[<span class="cm-variable">j</span>][<span class="cm-number">1</span>];</pre></div><div class="CodeMirror-activeline" style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">52</div></div><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><pre>    </pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">53</div></div><pre>    <span class="cm-variable">patientDict</span>[<span class="cm-variable">diseaseNames</span>[<span class="cm-variable">j</span>][<span class="cm-number">0</span>]] = <span class="cm-variable">posResult</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">54</div></div><pre>  <span class="cm-keyword">print</span> <span class="cm-variable">patientDict</span></pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">55</div></div><pre>      </pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">56</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">57</div></div><pre><span class="cm-variable">inputFile</span>.<span class="cm-variable">close</span>()</pre></div><div style="position: relative;"><div style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">58</div></div><pre><span class="cm-variable">outputFile</span>.<span class="cm-variable">close</span>()</pre></div></div><div class="CodeMirror-cursor" style="left: 32px; top: 663px; height: 13px; visibility: hidden;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none; visibility: hidden;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 762px;"></div><div class="CodeMirror-gutters" style="height: 762px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div></div></div></div>
+                                  </form>
+                              </div>
+
+                              <div id="buildframe" class="tab-pane">
+
+                                                                                                        <div id="buildtextarea" name="buildtextarea" class="well" style=" height: 86%;"><pre>Execution successful</pre><pre>[VC-RUN] Passed [file exist(bayes.py)]
+[VC-RUN] Running [python2.7 bayes.py -i $LIB/sample_input.txt    ;]
+[VC-RUN] Passed [python2.7 bayes.py -i $LIB/sample_input.txt    ;]
+[VC-CMD] Complete output is shown below...
+[---python---] 
+Patient-0
+{'celiac': 0.1872, 'alzheimer': 0.44, 'ALS': 0.81, 'parkinson': 0.0899, 'leukemia': 0.09682400000000001}
+Patient-1
+{'celiac': 0.68, 'alzheimer': 0.45, 'ALS': 1, 'parkinson': 0.74, 'leukemia': 0.2695}
+Patient-2
+{'celiac': 0.68, 'alzheimer': 0.44, 'ALS': 0.67, 'parkinson': 0.2552, 'leukemia': 0.49}
+Patient-3
+{'celiac': 0.72, 'alzheimer': 1, 'ALS': 0.76, 'parkinson': 0.0713, 'leukemia': 0.5720000000000001}
+Patient-4
+{'celiac': 0.68, 'alzheimer': 1, 'ALS': 1, 'parkinson': 1, 'leukemia': 0.20900000000000002}
+Patient-5
+{'celiac': 0.46799999999999997, 'alzheimer': 0.39, 'ALS': 0.5092, 'parkinson': 0.23, 'leukemia': 0.168168}
+Patient-6
+{'celiac': 0.65, 'alzheimer': 0.3705, 'ALS': 0.5427000000000001, 'parkinson': 0.29, 'leukemia': 0.1976}
+Patient-7
+{'celiac': 0.507, 'alzheimer': 0.39, 'ALS': 0.67, 'parkinson': 1, 'leukemia': 0.1444}
+Patient-8
+{'celiac': 0.507, 'alzheimer': 0.39, 'ALS': 0.1748, 'parkinson': 0.29, 'leukemia': 1}
+Patient-9
+{'celiac': 0.68, 'alzheimer': 0.39, 'ALS': 0.23, 'parkinson': 0.88, 'leukemia': 1}
+[---python---] 
+[VC-RUN] Running [python2.7 $LIB/gradingScript.py sample_input_inference.txt $LIB/sample_output.txt    ;]
+[VC-RUN] Passed [python2.7 $LIB/gradingScript.py sample_input_inference.txt $LIB/sample_output.txt    ;]
+[VC-CMD] Complete output is shown below...
+[---python---] 
+No of Q-1 correct 0
+No of Q-2 correct 0
+No of Q-3 correct 0
+[---python---] 
+</pre></div>
+
+                              </div>
+										</div> <!-- tab-content end -->
+				  </div><!-- end tabbable -->
+									
+									
+									<!-- test -->
+	     </div> <!-- extra div -->
+	  </div> <!-- editor and logs -->	
+
+
+
+	</div> <!-- end dirs and editor -->
+
+
+
+<!-- view output start -->
+							<div id="modal-table-output" class="modal hide fade" tabindex="-1">
+								<div class="modal-header no-padding">
+									<div class="table-header">
+										<button type="button" class="close" data-dismiss="modal">
+											<h3>Close</h3>
+										</button>
+											<span style="font-size:20px">Output</span>
+									</div>
+								</div>
+
+								<div class="modal-body no-padding" id="div-output" style="height:600px;">
+
+								</div>
+							</div>
+<!-- end view output -->
+
+<!-- diff window -->
+							<div id="modal-table-diff" class="modal hide fade" tabindex="-1">
+								<div class="modal-header no-padding">
+									<div class="table-header">
+										<button type="button" class="close" data-dismiss="modal">
+																						<h3>Close</h3>
+										</button>
+											<span style="font-size:20px">View Changes</span>
+									</div>
+								</div>
+
+								<div class="modal-body no-padding" id="div-diff">
+
+								</div>
+							</div>
+<!-- end diff window -->
+
+                            
+<!-- image viewer -->
+    <div id="image-viewer-modal" class="modal hide fade" tabindex="-1">
+		    <div class="modal-header no-padding">
+            <div class="table-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+                Image viewer
+            </div>
+				</div>
+
+        <div class="modal-body">
+            <table><tbody><tr><td>
+                            <img id="image-viewer-modal-image">
+            </td></tr></tbody></table>
+        </div>
+   </div>
+<!-- end image viewer -->
+                            
+<!-- other viewer -->
+    <div id="other-viewer-modal" class="modal hide fade" tabindex="-1">
+      <div class="modal-header no-padding">
+        <div class="table-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+            File viewer
+        </div>
+      </div>
+
+      <div class="modal-body">
+          <table><tbody><tr><td>
+               <object type="application/pdf" id="other-viewer-modal-area" width="100%" height="100%">No default viewer found</object>
+          </td></tr></tbody></table>
+      </div>
+    </div>
+<!-- end other viewer -->
+                            
+                            
+
+<script>
+    
+    function isTextFile(ext) {
+    	// // EDIT_EXT
+    	var js_ext_array = ["java","xml","txt","text","py","c","C","cpp","cc","h","php","js","json","sql","html","vhd","vhdl","properties","mak","hpp","htm","html","sh","pl","pm"];
+			if (js_ext_array.indexOf(ext) == -1) return false; 
+			return true;
+    }
+    function isImgFile(ext) {
+    	var js_ext_array = ["jpg","jpeg","bmp","gif","png"];
+			if (js_ext_array.indexOf(ext) == -1) return false; 
+			return true;
+    }
+    function isOtherFile(ext) {
+    	var js_ext_array = ["pdf"];
+			if (js_ext_array.indexOf(ext) == -1) return false; 
+			return true;
+    }    
+
+    function canOpenFile(filename) {
+			var ext_index = filename.lastIndexOf('.');
+			if (ext_index == -1) {
+				ext = null;
+			} else {
+            	ext = filename.substring(ext_index + 1);
+			}
+
+			if ((ext == null) || isTextFile(ext)) {
+				return true;
+			} else {
+				return false;
+			}
+    }  
+
+	function findMode(filename) {
+		ext = filename.split('.').pop().toLowerCase();
+		switch (ext) {
+			case "java": 
+				mode = "text/x-java";
+				break;
+			case "xml": 
+				mode = "text/html";
+				break;
+			case "py": 
+				mode = "text/x-python";
+				break;			
+			case "php":
+				mode = "application/x-httpd-php";
+				break;
+			case "c":
+				mode = "text/x-csrc";
+				break;
+			case "cpp":
+			case "c++":
+				mode = "text/x-c++src";
+				break;
+			default: 
+				mode = "text/html";
+				break;
+		}
+		return mode;
+	}
+	function findReadOnlyDelimiter(filename) {
+		var delim = filename.split('.').pop().toLowerCase();
+		switch (ext) {
+			case "java": 
+				delim = "//";
+				break;
+			case "py": 
+				delim = "#";
+				break;			
+			case "php":
+			case "c":
+			case "cpp":
+			case "c++":
+			default: 
+				delim = "//";
+				break;
+		}
+		return delim;
+	}	
+  var editor = CodeMirror.fromTextArea(document.getElementById("codearea0"), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    autoCloseBrackets: false,
+    autoCloseTags: true,
+	mode: {name: "xml", alignCDATA: true},
+	theme: "neat",
+  });
+  cm_mode = findMode("");
+  editor.setOption("mode", cm_mode);
+  
+     
+  	var gloss_theme = 0;
+	var editor_content_change = 0;
+	var viewer_last_fname = null;
+	var viewer_last_fpath = null;
+	var viewer_first_fpath = "/";
+
+	function show_voc_gritter($msg, failed) {
+		if (failed) {
+			color_string = "gritter-error gritter-light";
+			$msg = '<i class="icon-exclamation-sign"> '+$msg+'</i>';
+
+		} else {
+			color_string = "gritter-note gritter-light";
+			$msg = '<i class="icon-ok"> '+$msg+'</i>';
+		}
+		
+		$.gritter.add({
+			title: $msg,
+			time: 1500,
+			class_name: color_string	
+		});
+	}
+	
+
+	lastEditTime = 0;
+	numEdits = 1;
+	function handleEditorChange(doc, param) {
+		lastEditTime = new Date().getTime();
+		if (numEdits) {
+			$("#editor-save-status").html("Save pending");
+		}
+		numEdits++;
+	}	 
+ 	 
+ 	 editor.on("change", handleEditorChange);	 
+ 	 function vocIsFileReadOnly(fpath) {
+ 	 	return false;
+	  }
+	  
+	  $('.vocdivider').draggable({
+    axis: 'x', 
+    containment: 'parent',
+    helper: 'clone', 
+    drag: function (event, ui) { 
+        var width = ui.offset.left; 
+        $(this).prev().width(width); 
+    } 
+});
+ 
+
+</script>
+
+
+
+		<!-- ace scripts -->
+		<!-- page specific plugin scripts -->
+		<script src="./Workbench_files/fuelux.tree-sampledata.js"></script>
+		<script src="./Workbench_files/fuelux.tree.js"></script>
+		
+		
+		<script type="text/javascript">	
+			var tree_data; 
+			
+
+ tree_data = { 
+  'work' : {name:'work',  base:'1',  type:'folder', unfold:'1',  ed:'0', ec:'1', path:'./work',} , 
+ } 
+
+ tree_data['work']['additionalParameters'] = { 
+ 'children' : { 
+ 'bayes.py' : {name:'bayes.py',   type:'item', ed:'1', ee:'1', path:'./work/bayes.py',} , 
+ } 
+ } 
+
+
+				var treeDataSource = new DataSourceTree({data: tree_data});
+
+                var readonlyWidgets = [];
+                
+                function clearReadOnlyWidgets() {
+                    if (readonlyWidgets.length) {
+                        for (var i = 0; i < readonlyWidgets.length; i++) {
+                            readonlyWidgets[i].clear();
+                        }
+
+                        readonlyWidgets = [];
+                    }
+
+                }	
+                function addReadOnlyWidget(widget) {
+                    readonlyWidgets.push(widget);
+                }		
+				
+			function voc_process_readonly(cm, delim, begins, ends) {
+			    var expectingBegin = true;
+			    console.log("Delim is "+delim);
+			    for (i=0; i< cm.doc.lineCount(); i++) {
+			    
+			    var test = delim+"READONLY_BEGIN"; console.log(test);
+			    
+			        var val = cm.getLine(i);
+			        val = val.replace(/ /g,'');
+			        if (val == delim+"READONLY_BEGIN") {
+			            console.log("val is "+val);
+			            if (!expectingBegin) return false; 
+			            begins.push(i);
+			            expectingBegin = false;
+			        } else if (val == delim+"READONLY_END") {
+			        	if (expectingBegin) return false;
+			        	ends.push(i);
+			        	expectingBegin = true;
+			        } else {
+			        }
+			    }
+			    if (begins.length && (begins.length == ends.length)) {
+			        return true;
+			    } else {
+			        return false;
+			    }
+			}
+
+            function voc_get_viewer_code(fpath, fname, lineNum){		
+
+	
+
+        var stepstr = "";        
+        				
+				var url = "../util/vcprojapi.php?t=filefetch&asnid=2297"+stepstr;
+				var data = fpath; 
+
+				$.post(url,{getcode:1,data:data},function(ret_val)
+				{
+					if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+						window.location.replace("https://labs.vocareum.com/main/logout.php");
+					}
+
+					$('#codebtn').tab('show');
+
+					numEdits = 0; // reset num of edits for this file
+
+					cm_mode = findMode(fpath);
+					editor.setOption("mode", cm_mode);
+					editor.setValue(ret_val);
+
+					editor_content_change = editor.doc.changeGeneration();
+					
+						        // check ext. check if copy of default
+					var ro_begins = [];
+					var ro_ends = [];
+					var delim = findReadOnlyDelimiter(fpath);
+
+                    var readonly_lines = voc_process_readonly(editor, delim, ro_begins, ro_ends);
+                    
+                    clearReadOnlyWidgets(); // clear last
+
+                    if (readonly_lines && (ro_begins.length > 0)) {
+                    
+                    
+                        console.log(ro_begins);
+
+                        for (i = 0; i < ro_begins.length; i++) {
+                              var msg1 = document.createElement("div");
+                              // msg1.appendChild(document.createTextNode("Start readonly code"));
+                              msg1.className = "voc-readonly-top";
+                              
+                              var label = document.createElement("span");
+                              label.className = "label label-warning";
+                              label.appendChild(document.createTextNode("READ ONLY"));
+                              msg1.appendChild(label);
+                              
+                              var msg2 = document.createElement("div");
+                              // msg2.appendChild(document.createTextNode("End of readonly code"));
+                              msg2.className = "voc-readonly-bottom";                             
+                              
+                              ro_widget1 = editor.addLineWidget(ro_begins[i], msg1, {above:true, coverGutter: false, noHScroll: true});
+                              ro_widget2 = editor.addLineWidget(ro_ends[i], msg2, {coverGutter: false, noHScroll: true});
+
+                              addReadOnlyWidget(ro_widget1);
+                              addReadOnlyWidget(ro_widget2);
+
+                              editor.markText(
+                                {line: ro_begins[i],ch:0}, {line: ro_ends[i] + 1, ch:0},        
+                                    {
+                                        readOnly:true, 
+                                        atomic: true,
+                                        className:"vocbghighlight",
+                                        title:"READONLY"
+                                    }
+                              );
+                                
+                        }
+                    }
+            
+					viewer_last_fname = fname;
+					viewer_last_fpath = fpath;
+					$("#editor_current_file").html(fpath.substring(2));
+					if (lineNum > 0) {
+						if (lineNum > 0) lineNum = lineNum - 1;
+						editor.setCursor(lineNum);
+					}
+
+
+				});
+			  return false;
+			}
+			
+
+	    var $foldersToUnfold = [];
+			
+        function refeshFileTree() {
+            $('.tree-folder-header').each(function() {
+                    $val = $(this).data();
+                    if ('base' in $val) {
+			                  if ($(this).children(".icon-minus").length) { 
+                                $foldersToUnfold.push($val.path);
+                        }
+                    }
+            });
+            var stepstr = "";
+
+            $.ajax({
+            url: "../util/vcprojapi.php?t=getFileTree&asnid=2297"+stepstr+"&mode=s&name=tree1",
+            context: document.body
+            }).done(function(ret_val) {
+
+                  if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+                      window.location.replace("https://labs.vocareum.com/main/logout.php");
+                  }
+
+                  eval(ret_val);
+                  var treeDataSource2 = new DataSourceTree({data: tree1});
+
+                  $('.tree-folder-header').each(function() {
+                    $val = $(this).data();
+                    if ('base' in $val) {
+                      $par = $(this).parent();
+                      $par.detach();
+                    } 
+                  });
+
+                  $('#tree1').setDataSource(treeDataSource2);
+
+
+                  $('.tree-folder-header').each(function() {
+                                        $val = $(this).data();
+					                              if ($foldersToUnfold.indexOf($val['path']) != -1) {
+                                                $(this).trigger('click');
+                                        }
+                  });
+
+		  // process $foldersToUnfold
+	    	  $foldersToUnfold = [];
+            });
+        }
+
+        function voc_create(type, path, msg) {
+                var stepstr = "";
+                var url = "../util/vcsave.php?asnid=2297"+stepstr+"&mode=s&type="+type;
+        
+                $.ajax({
+                  type: 'POST',
+                  url: url,
+                  async: false, 
+                  data: {filepath: "./"+path}
+                  })
+                    .done(function(ret_val) {
+                            if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+                                window.location.replace("https://labs.vocareum.com/main/logout.php");
+                            }
+                            if (ret_val.indexOf('<ERROR:') !== -1) { // error
+                              $("#filestatuslabel").html("<i class='icon-warning-sign' style='margin-right:3px'> </i><font color=red>" + ret_val.substring(7) + "</font>");
+                            } else {
+                              show_voc_gritter(msg, false);
+                              refeshFileTree();
+                            }
+
+                    })
+                       .fail(function(ret_val) {
+                            var timenow = new Date().getTime();
+                            if (timenow - last_conn_warning > 10*1000) { // 10 seconds
+                              show_voc_gritter("New file/folder creation failed. Please check your internet connection", true);
+                              last_conn_warning = new Date().getTime();
+                            }
+                    });
+ 
+                    return true;
+          }
+			
+			
+		var save_count = 0;	
+		var last_conn_warning = new Date().getTime();
+        function voc_save(showGritter, dspmsg) {
+        		var save_ok = true;
+        		save_count++;
+				if (save_in_progress) {
+					return false;
+				}
+				save_in_progress = true;
+
+				$("#editor-save-status").html('<i class="icon-spin icon-spinner"></i> '+dspmsg);
+
+				$("#save-icon").addClass('icon-spin');
+				$("#save-icon").addClass('icon-spinner');
+				$('#save-icon').removeClass('vochide');
+				var viewerContents = editor.getValue();
+				var whichfilepath = viewer_last_fpath;
+				if (!whichfilepath) whichfilepath = viewer_first_fpath;
+				var filepath = encodeURIComponent(whichfilepath);				
+
+        var stepstr = "";        
+				var url = "../util/vcsave.php?type=Save&asnid=2297"+stepstr+"&mode=s&filepath="+filepath;
+				
+$.ajax({
+	type: 'POST',
+	url: url,
+	async: false, 
+	data: {code0: viewerContents}
+	})
+    .done(function(ret_val) {
+						if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+								window.location.replace("https://labs.vocareum.com/main/logout.php");
+						}
+						$("#save-icon").removeClass('icon-spin');
+						$("#save-icon").removeClass('icon-spinner');
+						$("#save-icon").addClass('vochide'); 
+						passed = ( ret_val.indexOf('SAVE SUCCESSFUL') !== -1 );
+						if (passed) {
+								if (showGritter) {
+									show_voc_gritter("File saved", false);
+								}
+								$("#editor-save-status").html('<i class="icon-ok"></i> Saved');
+						} else {
+								if (1 || showGritter) {
+									show_voc_gritter("Save failed. " + ret_val, true);
+								}
+								$("#editor-save-status").html('<i class="icon-exclamation-sign"></i> Save failed');
+						}
+						
+						editor_content_change = editor.doc.changeGeneration();
+						save_in_progress = false;
+
+		})
+       .fail(function(ret_val) {
+						$("#save-icon").removeClass('icon-spin');
+						$("#save-icon").removeClass('icon-spinner');
+						$("#save-icon").addClass('vochide'); 
+						
+						var timenow = new Date().getTime();
+						if (timenow - last_conn_warning > 10*1000) { // 10 seconds
+							show_voc_gritter("File save failed. Please check your internet connection", true);
+							last_conn_warning = new Date().getTime();
+						}
+						save_in_progress = false;
+						save_ok = false;
+		});			
+
+		return save_ok;
+		}
+		
+			
+			function isSaveNeeded() {
+					var codeFileChanged = true;
+					if (editor.doc.isClean(editor_content_change)) codeFileChanged = false;
+					if (vocIsFileReadOnly(viewer_last_fpath)) codeFileChanged = false;
+					return codeFileChanged;
+			}
+
+				
+			 function periodic_save() {
+				if (!($("#codeli").hasClass('active'))) {
+				}
+			 	var saveNeeded = isSaveNeeded();
+			 	timeNow = new Date().getTime();
+			 	if (saveNeeded && (timeNow - lastEditTime > 5000)) {
+					voc_save(false, "Saving");
+				} 
+				window.setTimeout('periodic_save()', 1000);
+			 }
+			 
+
+
+		</script>
+		<script type="text/javascript">	
+
+			var save_in_progress = false;
+			var runlog_in_progress = false;
+			var verify_in_progress = false;
+			var log_interval = 1;	
+			var current_mode = 1;
+			var previous_mode = 1;
+
+			var viewer = false;
+			var currentEditFileIndex = 0;
+			var edit_file = "";
+			var edit_file_name = "";
+
+
+var diffArea = null;
+
+
+function initDiff() {
+  value = editor.getValue();
+  var target = document.getElementById("div-diff");
+ 
+  target.innerHTML = "<h4>&nbsp;<i class=\"icon-spin icon-spinner\"></i> Loading diff. Please wait. </h4>";
+  
+	var filepath = viewer_last_fpath;				
+	if (!viewer_last_fpath) filepath = viewer_first_fpath;
+
+	// filepath = encodeURIComponent(filepath);
+	cm_mode = findMode(filepath);
+	
+	
+	var url = "../util/vcprojapi.php?t=projsource&orig=1&asnid=2297&id=14941&data=filepath";
+
+	$.post(url,{getcode:1,data:filepath},function(ret_val)
+	{
+		if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+			window.location.replace("https://labs.vocareum.com/main/logout.php");
+		}		
+		// conversion 
+		$("#scratchpad").val(ret_val);
+		orig_val = $("#scratchpad").val();
+			
+			
+		if (ret_val == "") {
+		  	target.innerHTML = "<h4>&nbsp; This file has no original version. </h4>";
+			diffArea = null;						
+			return;
+		}	
+		if (orig_val == value) {
+		  	target.innerHTML = "<h4>&nbsp;<i class=\"icon-check\"></i> Current version is same as the original version. </h4>";
+
+			// target.innerHTML = "<div style=\"padding: 10px\">Current Version is exactly same as the Original Version.</div>";	
+			diffArea = null;						
+			return;
+		}
+		
+		target.innerHTML = "<span style=\"padding-left:10px\">Current Version</span><span class=\"pull-right\" style=\"padding-right:10px\">Original Version</span>";							
+		  orig2 = orig_val;
+		  // value_mod = value.replace(/\u003cscript/g, "\u003cscript type=text/javascript ");
+		  value_mod = value;
+		  diffArea = CodeMirror.MergeView(target, {
+			value: value_mod,
+			origLeft: null,
+			orig: orig2,
+			lineNumbers: true,
+			mode: cm_mode,
+			highlightDifferences: true
+		  });
+
+	});
+}
+
+  
+
+
+
+
+
+			
+			$( document ).ready(function() {
+			    window.setTimeout('periodic_save()', 5000);
+
+          			});
+
+			function indicate_build_done() {
+					$("#build-icon").removeClass('icon-spin');
+					$("#build-icon").removeClass('icon-spinner');
+					$('#build-icon').addClass('vochide');				
+
+                    $('#buildbtn').tab('show');
+					
+			}
+
+					
+			jQuery(function($){
+
+		$(function() {
+
+		});
+
+		function hideAllFileBtn() {
+                        $('#fileuploadbtn').hide();
+                        $('#filedelbtn').hide();
+                        $('#filenewbtn').hide();
+                        $('#foldernewbtn').hide();
+                        $("#fileform" ).hide();
+		}
+		function showDelFileBtn() {
+                        $('#filedelbtn').show();
+		}
+		function showCreateFileBtn() {
+                        // $("#fileform" ).hide();
+                        $('#fileuploadbtn').show();
+                        $('#filenewbtn').show();
+                        $('#foldernewbtn').show();
+		}
+     			
+				
+		$("#modal-table-diff").on('shown.bs.modal', 
+				function (e) {
+					initDiff();
+				}
+		);
+
+		// File operation handlers
+
+    $('#filecreatebtn').on('click', function() {
+	$("#filestatuslabel").html("");
+	if ($('#filenewbtn').is(":visible")) {
+			voc_create("File", $("#input_filename").val(), "File created");
+	} else if ($('#foldernewbtn').is(":visible")) {
+			voc_create("Folder", $("#input_filename").val(), "Folder created");
+	}
+    });
+
+    $('#filedelbtn').on('click', function() {
+	var $val = $("#input_filename").val();
+	var $type = $("#input_filetype").val();
+
+	if ($val != '') {
+				bootbox.dialog("Are you sure you want to delete "+ $type + " \"" + $val + "\" ?", [{
+					"label" : "Yes",
+					"class" : "btn btn-success vocbtn vocbtn-success",
+					"callback": function() {
+						voc_create("Delete", $("#input_filename").val(), "Deleted");
+					}
+					}, {
+					"label" : "Cancel",
+					"class" : "btn btn-danger vocbtn vocbtn-danger"
+					}]
+				);
+	}
+    });
+    
+
+    $('#fileuploadbtn').on('click', function() {
+	      $("#fileuploadfield").click();
+    });
+    $("#fileuploadfield").change(function () {
+	$("#input_uploadpath").val("./" + $("#input_filename").val());
+	$("#fileuploadform").submit();
+    });
+
+    var wasDelOn = false;
+
+    $('#filecancelbtn').on('click', function() {
+			$("#fileform" ).hide();
+			$('#filenewbtn').show();
+			$('#foldernewbtn').show();
+			$('#fileuploadbtn').show();
+			if (wasDelOn) $('#filedelbtn').show();
+			$("#filestatuslabel").html("");
+    });
+    $('#filenewbtn').on('click', function() {
+
+			if ($('#filedelbtn').is(":visible")) {
+				wasDelOn = true;
+			} else {
+				wasDelOn = false;
+			}
+		
+			$('#foldernewbtn').hide();
+			$('#fileuploadbtn').hide();
+			$('#filedelbtn').hide();
+			$("#fileform" ).show();
+    });
+    $('#foldernewbtn').on('click', function() {
+			if ($('#filedelbtn').is(":visible")) {
+				wasDelOn = true;
+			} else {
+				wasDelOn = false;
+			}
+			$('#filenewbtn').hide();
+			$('#fileuploadbtn').hide();
+			$('#filedelbtn').hide();
+			$("#fileform" ).show();
+    });
+		
+
+
+						
+	
+		$('#tree1').ace_tree({
+			dataSource: treeDataSource ,
+			multiSelect:false,
+			loadingHTML:'<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
+			'open-icon' : 'icon-minus',
+			'close-icon' : 'icon-plus',
+			'selectable' : true,
+			'selected-icon' : 'icon-caret-right',
+			'unselected-icon' : 'icon-caret-right',
+      cacheItems: true
+		});
+
+		
+		$('#tree1').on('loaded', function (evt, data) {
+		});
+
+		$('#tree1').on('opened', function (evt, data) {
+
+		});
+
+		$('#tree1').on('closed', function (evt, data) {
+		});
+
+		$('#tree1').on('selectedfolder', function (evt, data) {
+			$('#input_filename').val(data.info[0].path.substring(2) + "/");
+			$('#input_filetype').val("folder");
+
+			hideAllFileBtn();
+			if (data.info[0].ec == 1) {
+				showCreateFileBtn();
+			} 
+			if (data.info[0].ed == 1) {
+				showDelFileBtn();
+			} 
+
+
+		});
+		$('#tree1').on('selected', function (evt, data) {
+			$('#input_filename').val(data.info[0].path.substring(2));
+			$('#input_filetype').val("file");
+			// if ($('#filenewbtn').is(":visible") && $('#foldernewbtn').is(":visible")) $('#filedelbtn').show();
+
+			hideAllFileBtn();
+                        if (data.info[0].ed == 1) {
+                                showDelFileBtn();
+                        } 
+                        if (data.info[0].ee == 1) {
+				editor.setOption("readOnly", false);
+			} else {
+				editor.setOption("readOnly", true);
+			}
+
+						
+			var ext_index = data.info[0].name.lastIndexOf('.');
+			if (ext_index == -1) {
+				ext = null;
+			} else {
+            	ext = data.info[0].name.substring(ext_index + 1);
+            }
+
+
+			if ((ext == null) || isTextFile(ext)) {
+                $.cookie('editorDefaultFile_' + 6683 + '_' + 2354, data.info[0].path);
+			} else if (isImgFile(ext)) {
+                $.get('../util/vcprojapi.php', {t: 'filefetch', asnid: 2297, data: data.info[0].path}, function(data) {
+
+                    $('#image-viewer-modal-image').prop('src', data);
+                    $('#image-viewer-modal').modal('show');
+				});
+                return;
+			} else if (isOtherFile(ext)) {
+
+                  							
+          $.get('../util/vcprojapi.php', {t: 'filefetch', asnid: 2297,  data: data.info[0].path}, function(data) {
+					$('#other-viewer-modal-area').prop('data', data);
+					// set application type here
+					$('#other-viewer-modal').modal('show');
+				});
+                return;
+			} else {
+					$.gritter.add({
+						title: 'No viewer for extension '+ext+' found',
+						text: '',
+						class_name: 'gritter-light gritter-warning'
+					});
+				return; // no action
+			}
+			
+			var codeFileChanged = true;			
+			
+			if (editor.doc.isClean(editor_content_change)) codeFileChanged = false;
+			if (vocIsFileReadOnly(viewer_last_fpath)) codeFileChanged = false;
+
+			if (codeFileChanged) {
+					voc_save(true, "Saving, please wait");
+					voc_get_viewer_code(data.info[0].path, data.info[0].name, 0);					
+			} else {
+				voc_get_viewer_code(data.info[0].path, data.info[0].name, 0);
+			}
+
+					});
+
+
+		$('.tree-folder-header').each(function(i, obj) {
+					$val = $(this).data();
+					if ($val['unfold'] == 1) {
+						$(this).trigger('click');
+					}
+		});
+
+		
+		// modes
+		$( "#codebtn" ).click(function() {
+  		});
+ 		$( "#actionsdropdown" ).click(function() {
+  		}); 		
+  		
+  				
+		$( "#viewerbtn" ).click(function() {
+				if ($('#filelisting').hasClass('hide')) {
+					changeEditorMode(2, 1);
+				} else {
+					changeEditorMode(1, 2);
+				}
+  		});
+
+		$( "#editorbtn" ).click(function() {
+				$("#viewbox").addClass('hide');
+				$("#editorbox").removeClass('hide');
+		});	
+
+		// MODE 1: E and C     E8 C4  XP
+		// MODE 2: F and E	   F4 E12 
+		// MODE 3: E		   E12    XP
+		
+		// B1: M1 > M3
+		// B2: M3 > M1
+		
+		// G1: M1 > M2
+		//	   M3 > M2
+		// G2: BACK TO M1 OR M3		
+		function changeEditorMode(modeFrom, modeTo) {
+			switch (modeFrom) {
+				case 1:
+				break;
+				case 2:
+				break;
+				case 3:
+				break;
+				default:
+				break;
+			}
+			console.log("From mode "+modeFrom+" to "+modeTo);
+			switch (modeTo) {
+				case 1:
+					$("#filelisting").removeClass('hide');
+					$("#icon-folder").removeClass('icon-chevron-down');		
+					$("#icon-folder").addClass('icon-remove');			
+				
+				break;
+				case 2:
+					$("#filelisting").addClass('hide');
+					$("#icon-folder").removeClass('icon-remove');			
+					$("#icon-folder").addClass('icon-chevron-down');		
+				break;
+				default:
+				break;
+			}		
+			current_mode = modeTo;
+		}	
+		
+        $( "#savebutton").click(function() {
+				voc_save(true, "Saving");
+        });
+        
+		$( "#undocodebutton" ).click(function() {
+					editor.doc.undo();
+				});		
+		
+	
+		$('body').on('click', '.bldFileOpen', function() {
+			
+			var $this = $(this);
+			var filepath = $this.data('filedir')+"/"+$this.data('filename');
+
+            		filepath = "./work/" + filepath; // builds can happen on work
+
+			var line_num = 0;
+			if ($this.data('line') > 0) {
+				line_num = $this.data('line');
+			}
+			voc_get_viewer_code(filepath, $this.data('filename'), line_num);
+			return false;
+		})
+		
+		$( "#buildbutton" ).click(function() {
+
+				var codeFileChanged = true;
+				if (editor.doc.isClean(editor_content_change)) codeFileChanged = false;
+				if (vocIsFileReadOnly(viewer_last_fpath)) codeFileChanged = false;
+				if (codeFileChanged) {		
+					$('#buildtextarea').html("<i class=\"icon-spin icon-spinner\"></i>&nbsp; Saving file before triggering build. Note: A stable internet connection is required for the save and build");
+
+					if (voc_save(true, "Saving before build")) {
+					} else {
+					}
+				}
+				
+				build_in_progress = true;
+								
+				
+				if (editor.doc.isClean(editor_content_change)) {
+				} else {
+				}
+				$('#buildtextarea').html("<i class=\"icon-spin icon-spinner\"></i>&nbsp; Waiting for output ..");
+				
+				$('#build-icon').removeClass('vochide');				
+				$("#build-icon").addClass('icon-spin');
+				$("#build-icon").addClass('icon-spinner');
+
+				var filepath = viewer_last_fpath;				
+				if (!viewer_last_fpath) filepath = viewer_first_fpath;
+				filepath = encodeURIComponent(filepath);				
+
+        var stepstr = ""; // "";        
+				
+        					          	var url = "https://labs.vocareum.com/domains/common_submit.php?id=14941&type=BUILD&outputformat=json";				  
+									
+var jqxhr = $.post(url,{code0: ""},function(ret_val) {
+					if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+						window.location.replace("https://labs.vocareum.com/main/logout.php");
+					}
+					passed = ( ret_val.indexOf('BUILD SUCCESSFUL') !== -1 );
+					
+					if (passed) {
+						show_voc_gritter("Build successful", false);
+					} else {
+						show_voc_gritter("Build completed", false);
+					}
+					
+					$('#buildtextarea').html(ret_val);
+
+					
+					var build_resp;
+					
+					try {
+						build_resp = jQuery.parseJSON(ret_val);
+					} catch(err) {
+						build_resp = "ERROR";
+					}					
+					
+					var outp = "Could not get build response";
+					if (!build_resp || (build_resp == "") || (build_resp == "ERROR")) {
+						if (build_resp == "ERROR") {
+							outp = "Build error. <br><br> ERROR CODE: INVJ01"
+						} else {
+							outp = "Could not fetch build response";
+						}
+					} else {
+						if (build_resp.result == "pass") {
+							outp = '<i class="icon-ok icon-small green"> <strong>Build successful</strong></i><br>';
+						} else if (build_resp.result == "fail") {
+							outp = '<i class="icon-exclamation-sign icon-large red"> <strong>Build failed</strong></i><br>';
+						}	
+						for (i = 0; i < build_resp.messages.length; i++) {	
+							msg = build_resp.messages[i];
+							if (msg.file != "") {
+								if (canOpenFile(msg.file)) {
+									outp = outp + '<a class="bldFileOpen" href="#" data-filename="'+ msg.file + '" data-filedir="'+ msg.dir +'" data-line="'+ msg.line + '" class="btn btn-link btn-small" style="margin:2px;padding:0px 4px 0px 4px !important;"> ' +
+												'	<i class="icon-reply icon-only"></i> ' +
+												' </a> ';
+								}
+							}						
+							outp = outp + '' + msg.message + ' <br>';
+						}
+					}	
+					$('#buildtextarea').html(outp);
+
+													
+
+			})
+			.done(function() {
+							})
+			.fail(function() {
+								show_voc_gritter("Something went wrong. Please try again", false);
+				$('#buildtextarea').html("Something went wrong. Please try again");
+			})
+			.always(function() {
+								indicate_build_done();
+				build_in_progress = false;
+			});
+			
+			
+						
+		});
+                     
+
+
+    $('#shellinput').keyup(function(e) {
+        if(e.keyCode == 13) {
+            $('#shellbutton').trigger("click");
+        }
+    });
+
+		$( ".commandbutton" ).click(function() {
+		    var $type = $(this).data("command");	
+				var filepath = viewer_last_fpath;				
+				if (!viewer_last_fpath) filepath = viewer_first_fpath;
+
+				filepath = encodeURIComponent(filepath);
+				
+				
+				if (isSaveNeeded()) {					
+					voc_save(true, "Saving");
+				}
+
+				$('#buildtextarea').html("<i class=\"icon-spin icon-spinner\"></i>&nbsp; Waiting for output ..");
+
+
+        
+        if (($type == 'BUILD') || ($type == 'RUN')) {
+            stepstr = "";
+        }
+
+        if ($type == 'SHELL') {
+            var input = encodeURIComponent($('#shellinput').val());
+            var url =  "https://labs.vocareum.com/domains/common_submit.php?id=2297&type="+$type+"&input="+input;
+        } else {
+                
+                              var url = "https://labs.vocareum.com/domains/common_submit.php?id=14941&type="+$type;
+              	
+						
+        } // else SHELL
+                $.post(url,{code0: ""},function(ret_val)
+                {
+                  if (ret_val.indexOf('<ERROR:INVALID_SESSION>') !== -1) { // invalid session
+                    window.location.replace("https://labs.vocareum.com/main/logout.php");
+                  }
+
+                  show_voc_gritter($type+" done", false);
+                  $('#buildtextarea').html(ret_val);
+                  indicate_build_done();
+                  build_in_progress = false;
+                  refeshFileTree();
+                });
+						
+		});
+
+
+       $('#help-window' ).click(function(){
+            if (!$('#jspanelWindow').length) {
+		$.jsPanel({
+			id: "jspanelWindow",
+    			theme:    "light",
+    			title:    "Instructions",
+			addClass: {
+				header: "voc-jpanel-header",
+				content: "voc-jpanel-content",
+			},
+			position: { top: 130, right: "auto" },
+			size: { width: 400, height: 500 },
+			resizable: "disabled",
+			content:  "<iframe src='../util/vcprojapi.php?t=gethelp&asnid=2297' width='100%' height='100%' style=''></iframe>",
+ 			controls: { buttons: 'closeonly', iconfont: 'font-awesome' },
+		});
+	    }
+        });
+
+
+
+				
+		});
+		
+        function restoreViewMode() {
+	                $.each(location.search.substr(1).split('&'), function() {
+                var data = this.split('=');
+
+                if (data[0] == 'vmd' && data[1].length) {
+                    if (data[1].charAt(0) == 1) {
+                        $('#viewerbtn').trigger('click');
+                    }
+
+                    if (data[1].charAt(1) == 1) {
+                        $('#buildbtn').tab('show');
+                    }
+
+                    return false;
+                }
+            });
+	            }
+
+		
+	            
+        function confirmSubmitAsnBtn(url) {
+          var str = "Are you sure you want to submit ?";
+          bootbox.dialog(str, 
+                         [{
+                           "label" : "Yes",
+                           "class" : "btn btn-success vocbtn vocbtn-success",
+                           "callback": function() {
+                             window.location = url;
+                           }
+                         }, 
+                          {
+                            "label" : "Cancel",
+                            "class" : "btn btn-danger vocbtn vocbtn-danger"
+                          }]
+          );
+        };
+      
+			if ($.cookie('buildtextareaData')) {
+				$.removeCookie('buildtextareaData');
+			}
+				
+	$(".breadcrumbs").prepend('<div class="pull-right"><button id="help-window" class="btn btn-warning vocbtn vocbtn-warning">Instructions</button></div>');
+
+
+	</script>
+
+<!-- PAGE CONTENT ENDS HERE -->
+					</div><!--/row-->
+				</div><!--/#page-content-->
+		</div><!-- #main-content -->
+	</div><!--/.fluid-container#main-container-->
+
+<div id="push"></div>
+</div>
+	
+
+		<!--[if lte IE 8]>
+		  <script src="../shared/ace/assets/js/excanvas.min.js"></script>
+		<![endif]-->		
+		
+		
+		<script src="./Workbench_files/ace-elements.js"></script>
+		<script src="./Workbench_files/jquery.gritter.min.js"></script>
+        <script src="./Workbench_files/jquery.autosize-min.js"></script>
+        <script src="./Workbench_files/jquery.colorbox-min.js"></script>
+		
+		<!-- functions start : remove unused ones -->
+
+		<script type="text/javascript"> <!-- PCHECK -->
+			$(function() {
+			
+				$('textarea[class*=autosize]').autosize({append: "\n"});
+			
+				$('#accordion2').on('hide', function (e) {
+					$(e.target).prev().children(0).addClass('collapsed');
+				})
+				$('#accordion2').on('hidden', function (e) {
+					$(e.target).prev().children(0).addClass('collapsed');
+				})
+				$('#accordion2').on('show', function (e) {
+					$(e.target).prev().children(0).removeClass('collapsed');
+				})
+				$('#accordion2').on('shown', function (e) {
+					$(e.target).prev().children(0).removeClass('collapsed');
+				})
+
+				$('#accordion-style').on('click', function(ev){
+					var target = $('input', ev.target);
+					var which = parseInt(target.val());
+					if(which == 2) $('#accordion').addClass('accordion-style2');
+					 else $('#accordion').removeClass('accordion-style2');
+				});			
+			
+				var oldie = /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase());
+				$('.easy-pie-chart.percentage').each(function(){
+					$(this).easyPieChart({
+						barColor: $(this).data('color'),
+						trackColor: '#EEEEEE',
+						scaleColor: false,
+						lineCap: 'butt',
+						lineWidth: 8,
+						animate: oldie ? false : 1000,
+						size:75
+					}).css('color', $(this).data('color'));
+				});
+			
+				$('[data-rel=tooltip]').tooltip();
+				$('[data-rel=popover]').popover({html:true});
+			
+			
+				$('#gritter-regular').on(ace.click_event, function(){
+					$.gritter.add({
+						title: 'This is a regular notice!',
+						text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+						image: $assets+'/avatars/avatar1.png',
+						sticky: false,
+						time: '',
+						class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
+					});
+			
+					return false;
+				});
+			
+				$('#gritter-sticky').on(ace.click_event, function(){
+					var unique_id = $.gritter.add({
+						title: 'This is a sticky notice!',
+						text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+						image: $assets+'/avatars/avatar.png',
+						sticky: true,
+						time: '',
+						class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+					});
+			
+					return false;
+				});
+			
+			
+				$('#gritter-without-image').on(ace.click_event, function(){
+					$.gritter.add({
+						// (string | mandatory) the heading of the notification
+						title: 'This is a notice without an image!',
+						// (string | mandatory) the text inside the notification
+						text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+						class_name: 'gritter-success' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+					});
+			
+					return false;
+				});
+			
+			
+				$('#gritter-max3').on(ace.click_event, function(){
+					$.gritter.add({
+						title: 'This is a notice with a max of 3 on screen at one time!',
+						text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+						image: $assets+'/avatars/avatar3.png',
+						sticky: false,
+						before_open: function(){
+							if($('.gritter-item-wrapper').length >= 3)
+							{
+								return false;
+							}
+						},
+						class_name: 'gritter-warning' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+					});
+			
+					return false;
+				});
+			
+			
+				$('#gritter-center').on(ace.click_event, function(){
+					$.gritter.add({
+						title: 'This is a centered notification',
+						text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+						class_name: 'gritter-info gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+					});
+			
+					return false;
+				});
+				
+				$('#gritter-error').on(ace.click_event, function(){
+					$.gritter.add({
+						title: 'This is a warning notification',
+						text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
+						class_name: 'gritter-error' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
+					});
+			
+					return false;
+				});
+					
+			
+				$("#gritter-remove").on(ace.click_event, function(){
+					$.gritter.removeAll();
+					return false;
+				});
+					
+			
+				///////
+			
+			
+				$("#bootbox-regular").on(ace.click_event, function() {
+					bootbox.prompt("What is your name?", function(result) {
+						if (result === null) {
+							//Example.show("Prompt dismissed");
+						} else {
+							//Example.show("Hi <b>"+result+"</b>");
+						}
+					});
+				});
+					
+				$("#bootbox-confirm").on(ace.click_event, function() {
+					bootbox.confirm("Are you sure?", function(result) {
+						if(result) {
+							bootbox.alert("You are sure!");
+						}
+					});
+				});
+					
+				$("#bootbox-options").on(ace.click_event, function() {
+					bootbox.dialog("I am a custom dialog with smaller buttons", [{
+						"label" : "Success!",
+						"class" : "btn-small btn-success",
+						"callback": function() {
+							//Example.show("great success");
+						}
+						}, {
+						"label" : "Danger!",
+						"class" : "btn-small btn-danger",
+						"callback": function() {
+							//Example.show("uh oh, look out!");
+						}
+						}, {
+						"label" : "Click ME!",
+						"class" : "btn-small btn-primary",
+						"callback": function() {
+							//Example.show("Primary button");
+						}
+						}, {
+						"label" : "Just a button...",
+						"class" : "btn-small"
+						}]
+					);
+				});
+			
+			
+			
+				$('#spinner-opts small').css({display:'inline-block', width:'60px'})
+			
+				var slide_styles = ['', 'green','red','purple','orange', 'dark'];
+				var ii = 0;
+				$("#spinner-opts input[type=text]").each(function() {
+					var $this = $(this);
+					$this.hide().after('<span />');
+					$this.next().addClass('ui-slider-small').
+					addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
+					css({'width':'125px'}).slider({
+						value:parseInt($this.val()),
+						range: "min",
+						animate:true,
+						min: parseInt($this.data('min')),
+						max: parseInt($this.data('max')),
+						step: parseFloat($this.data('step')),
+						slide: function( event, ui ) {
+							$this.attr('value', ui.value);
+							spinner_update();
+						}
+					});
+				});
+			
+			
+			
+			
+			
+				$.fn.spin = function(opts) {
+					this.each(function() {
+					  var $this = $(this),
+						  data = $this.data();
+			
+					  if (data.spinner) {
+						data.spinner.stop();
+						delete data.spinner;
+					  }
+					  if (opts !== false) {
+						data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
+					  }
+					});
+					return this;
+				};
+			
+				function spinner_update() {
+					var opts = {};
+					$('#spinner-opts input[type=text]').each(function() {
+						opts[this.name] = parseFloat(this.value);
+					});
+					$('#spinner-preview').spin(opts);
+				}
+			
+			
+			
+				$('#id-pills-stacked').removeAttr('checked').on('click', function(){
+					$('.nav-pills').toggleClass('nav-stacked');
+				});
+			
+			
+			});
+		</script>
+		<!-- functions end -->
+		
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52139408-1', 'auto');
+      ga('send', 'pageview');
+  
+</script>
+
+
+	
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important;"></textarea></body></html>

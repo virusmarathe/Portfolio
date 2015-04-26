@@ -1,7 +1,10 @@
-This repo contains all the projects that I worked on while at UCSC.
+This repo contains all the projects that I worked on while at USC and UCSC.
 All projects have a solution file for visual C++ for ease of access.
 
 It includes:
 - Psychic Ninja (Senior Game Design Final Project)
 - Level Editor Tool created for Psychic Ninja
 - 3D OpenGL Game Engine (C++)
+- Jello Cube Simulation (C++)
+- Quaternion Interpolation Implementation (C++)
+- Constrained Particle System (C++)
